@@ -11,6 +11,7 @@
 
 @implementation MyTableViewController
 @synthesize statusList;
+@synthesize myWeibo;
 @synthesize tvCell;
 @synthesize table;
 
@@ -44,7 +45,7 @@ static const float FONT_SIZE = 17.0f;
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    statusList = nil;
+    myWeibo = [[MyWeibo alloc]initWithReceiver:self];
     
 }
 
@@ -64,9 +65,7 @@ static const float FONT_SIZE = 17.0f;
 #pragma mark - network
 -(IBAction)itemPressed:(id)sender{
     NSLog(@"itempressed");
-    MyWeibo *weibo = [[MyWeibo alloc]initWithReceiver:self];
-    [weibo getTimeline];
-    [weibo release];
+    [myWeibo getTimeline];
         
 }
 
@@ -79,11 +78,14 @@ static const float FONT_SIZE = 17.0f;
 -(void)onReceiveArrayData:(NSArray *)data
 {
     self.statusList = data;
+    NSLog(@"statusList retainCount: %d",statusList.retainCount);
     [table reloadData];
 }
 -(void)dealloc
 {
     [FONT release];
+    [myWeibo release];
+    [statusList release];
     [super dealloc];
 }
 

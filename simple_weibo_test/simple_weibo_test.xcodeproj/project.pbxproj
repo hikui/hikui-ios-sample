@@ -10,8 +10,8 @@
 		A478278D14E79C690040FAB8 /* MyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A478278B14E79C690040FAB8 /* MyTableViewController.m */; };
 		A478278E14E79C690040FAB8 /* MyTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A478278C14E79C690040FAB8 /* MyTableViewController.xib */; };
 		A478279314E7A12D0040FAB8 /* MyWeibo.m in Sources */ = {isa = PBXBuildFile; fileRef = A478279214E7A12D0040FAB8 /* MyWeibo.m */; };
-		A47827A014E7B31F0040FAB8 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A478279F14E7B31F0040FAB8 /* JSONKit.m */; };
 		A47827AA14E7C8260040FAB8 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A47827A914E7C8260040FAB8 /* CustomCell.xib */; };
+		A47827BA14E7E00B0040FAB8 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A47827B914E7E00B0040FAB8 /* JSONKit.m */; };
 		A496B76914E78E76009E8D14 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A496B76814E78E76009E8D14 /* UIKit.framework */; };
 		A496B76B14E78E76009E8D14 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A496B76A14E78E76009E8D14 /* Foundation.framework */; };
 		A496B76D14E78E76009E8D14 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A496B76C14E78E76009E8D14 /* CoreGraphics.framework */; };
@@ -28,9 +28,9 @@
 		A478278F14E7A0420040FAB8 /* WeiboReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboReceiver.h; sourceTree = "<group>"; };
 		A478279114E7A12D0040FAB8 /* MyWeibo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWeibo.h; sourceTree = "<group>"; };
 		A478279214E7A12D0040FAB8 /* MyWeibo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWeibo.m; sourceTree = "<group>"; };
-		A478279E14E7B31F0040FAB8 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = ../../jsontest/jsontest/JSONKit.h; sourceTree = "<group>"; };
-		A478279F14E7B31F0040FAB8 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONKit.m; path = ../../jsontest/jsontest/JSONKit.m; sourceTree = "<group>"; };
 		A47827A914E7C8260040FAB8 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		A47827B814E7E00B0040FAB8 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		A47827B914E7E00B0040FAB8 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		A496B76414E78E76009E8D14 /* simple_weibo_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = simple_weibo_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A496B76814E78E76009E8D14 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A496B76A14E78E76009E8D14 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -71,8 +71,8 @@
 		A47827A114E7B3260040FAB8 /* JSONKit */ = {
 			isa = PBXGroup;
 			children = (
-				A478279E14E7B31F0040FAB8 /* JSONKit.h */,
-				A478279F14E7B31F0040FAB8 /* JSONKit.m */,
+				A47827B814E7E00B0040FAB8 /* JSONKit.h */,
+				A47827B914E7E00B0040FAB8 /* JSONKit.m */,
 			);
 			name = JSONKit;
 			sourceTree = "<group>";
@@ -200,7 +200,7 @@
 				A496B77914E78E76009E8D14 /* simple_weibo_testAppDelegate.m in Sources */,
 				A478278D14E79C690040FAB8 /* MyTableViewController.m in Sources */,
 				A478279314E7A12D0040FAB8 /* MyWeibo.m in Sources */,
-				A47827A014E7B31F0040FAB8 /* JSONKit.m in Sources */,
+				A47827BA14E7E00B0040FAB8 /* JSONKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
