@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WeiboReceiver.h"
+#import "WeiboUIDelegate.h"
 #import "MyWeibo.h"
 
-@interface MyTableViewController : UIViewController <WeiboReceiver>
+@interface MyTableViewController : UIViewController <WeiboUIDelegate>
 @property (nonatomic, retain) NSArray *statusList;
 @property (nonatomic, retain) MyWeibo *myWeibo;
 @property (nonatomic, retain) IBOutlet UITableViewCell *tvCell;

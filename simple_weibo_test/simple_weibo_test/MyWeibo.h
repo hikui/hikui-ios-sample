@@ -7,17 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "WeiboReceiver.h"
+#import "WeiboUIDelegate.h"
+#import "WeiboClientProtocol.h"
 
+#define Type_TimelineArray 0
+#define Type_Avatar 1
+#define Type_ContentImg 2
 
-@interface MyWeibo : NSObject
+@interface MyWeibo : NSObject<WeiboClientProtocol>
 {
     NSMutableData *receivedData;
 }
 
-@property (nonatomic,retain) id<WeiboReceiver> receiver;
+@property (nonatomic,retain) id<WeiboUIDelegate> receiver;
 
--(id)initWithReceiver:(id<WeiboReceiver>)receiver;
+-(id)initWithReceiver:(id<WeiboUIDelegate>)receiver;
 -(void)getTimeline;
+-(void)getAvatar;
 
 @end

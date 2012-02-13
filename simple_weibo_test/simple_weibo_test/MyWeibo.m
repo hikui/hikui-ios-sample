@@ -24,7 +24,7 @@ static NSString * PUBLIC_TIMELINE_URL = @"http://open.t.qq.com/api/statuses/publ
     return self;
 }
 
--(id)initWithReceiver:(id<WeiboReceiver>)receiver
+-(id)initWithReceiver:(id<WeiboUIDelegate>)receiver
 {
     self = [super init];
     if(self)
@@ -79,7 +79,8 @@ static NSString * PUBLIC_TIMELINE_URL = @"http://open.t.qq.com/api/statuses/publ
 {
     NSDictionary *timelineDict = [receivedData objectFromJSONData];
     NSArray *statusesArray = [[timelineDict objectForKey:@"data"]objectForKey:@"info"];
-    [self.receiver onReceiveArrayData:statusesArray];
+    [self.receiver onReceiveData:statusesArray withDataType:Type_TimelineArray];
+    //[self.receiver onReceiveArrayData:statusesArray];
     [connection release];
     
     
