@@ -12,6 +12,6 @@
 
 @required
 -(void)onReceiveStringData:(NSString *)data;
--(void)updateTimeline:(NSArray *)data;
+-(void)updateTableView:(NSArray *)data;
 -(void)updateAvatarWithImage:(UIImage *)img AtIndex:(NSIndexPath *)indexPath;
 @end

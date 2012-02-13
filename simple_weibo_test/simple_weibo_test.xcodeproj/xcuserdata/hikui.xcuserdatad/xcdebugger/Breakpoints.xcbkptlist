@@ -9,12 +9,12 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "simple_weibo_test/MyTableViewController.m"
-         timestampString = "350816273.939453"
+         timestampString = "350825568.747782"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "82"
-         endingLineNumber = "82"
-         landmarkName = "-onReceiveArrayData:"
+         startingLineNumber = "85"
+         endingLineNumber = "85"
+         landmarkName = "-updateTableView:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -23,12 +23,26 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "simple_weibo_test/MyTableViewController.m"
-         timestampString = "350816273.939453"
+         timestampString = "350822919.316969"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "98"
-         endingLineNumber = "98"
+         startingLineNumber = "120"
+         endingLineNumber = "120"
          landmarkName = "-tableView:numberOfRowsInSection:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "simple_weibo_test/MyTableViewController.m"
+         timestampString = "350824219.731346"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "160"
+         endingLineNumber = "160"
+         landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

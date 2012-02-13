@@ -7,19 +7,20 @@
 //
 
 #import "MyTableViewController.h"
-#import "MyWeibo.h"
+#import "CustomCell.h"
+#import "TimelineGetter.h"
+#import "AvatarLoader.h"
 
 @implementation MyTableViewController
 @synthesize statusList;
-@synthesize myWeibo;
-@synthesize tvCell;
+//@synthesize myWeibo;
 @synthesize table;
 @synthesize avatarList;
 
 //consts to help calculate the height
-static const float CONTENT_LABEL_WIDTH = 280.0F;
-static const float ORI_CONTENT_LABEL_HEIGHT = 21.0F;
-static const float ORI_TABLECELL_HEIGHT = 90.0F;
+static const float CONTENT_LABEL_WIDTH = 204.0f;
+static const float ORI_CONTENT_LABEL_HEIGHT = 39.0F;
+static const float ORI_TABLECELL_HEIGHT = 113.0f;
 static NSString *FONT = @"Helvetica";
 static const float FONT_SIZE = 17.0f;
 
@@ -46,7 +47,7 @@ static const float FONT_SIZE = 17.0f;
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    myWeibo = [[MyWeibo alloc]initWithReceiver:self];
+    //myWeibo = [[MyWeibo alloc]initWithReceiver:self];
     
     
 }
@@ -67,7 +68,9 @@ static const float FONT_SIZE = 17.0f;
 #pragma mark - network
 -(IBAction)itemPressed:(id)sender{
     NSLog(@"itempressed");
-    [myWeibo getTimeline];
+    TimelineGetter *getter = [[[TimelineGetter alloc]initWithReceiver:self]autorelease];
+    [getter GETWithURLString:@"http://open.t.qq.com/api/statuses/public_timeline?format=json"];
+    //[myWeibo getTimeline];
         
 }
 
@@ -77,16 +80,36 @@ static const float FONT_SIZE = 17.0f;
     NSLog(@"%@",data);
     [data release];
 }
--(void)updateTimeline:(NSArray *)data
+-(void)updateTableView:(NSArray *)data
 {
     self.statusList = data;
+    //init avatarList
+    if(avatarList != nil){
+        [avatarList release];
+    }
+    avatarList = [[NSMutableArray alloc]init];
+    for (int i= 0; i<data.count; i++) {
+        [self.avatarList addObject:[NSNull null]];
+    }
     //NSLog(@"statusList retainCount: %d",statusList.retainCount);
     [table reloadData];
+}
+-(void)updateAvatarWithImage:(UIImage *)img AtIndex:(NSIndexPath *)indexPath
+{
+    [img retain];
+    [indexPath retain];
+    
+    [self.avatarList replaceObjectAtIndex:indexPath.row withObject:img];
+    CustomCell *cell = (CustomCell *)[self.table cellForRowAtIndexPath:indexPath];
+    [cell.avatarView setImage:img];
+    //[cell setNeedsDisplay];
+    [img release];
+    [indexPath release];
 }
 -(void)dealloc
 {
     [FONT release];
-    [myWeibo release];
+    //[myWeibo release];
     [statusList release];
     [avatarList release];
     [super dealloc];
@@ -110,21 +133,36 @@ static const float FONT_SIZE = 17.0f;
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CustomCellIdentifier = @"CustomCellIdentifier ";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: CustomCellIdentifier];
+    CustomCell *cell = (CustomCell *)[tableView dequeueReusableCellWithIdentifier: CustomCellIdentifier];
     if (cell == nil) {
         NSArray *nib = [[NSBundle mainBundle]loadNibNamed:@"CustomCell" owner:self options:nil];
         if(nib.count>0){
-            cell=self.tvCell;
+            cell=(CustomCell *)[nib objectAtIndex:0];
         }else{
             NSLog(@"faild to load customcell nib file");
         }
     }
-    UILabel *nameLabel = (UILabel *)[cell viewWithTag:1];
-    nameLabel.text=[[statusList objectAtIndex:indexPath.row]objectForKey:@"name"];
-    UILabel *contentLabel = (UILabel *)[cell viewWithTag:2];
-    contentLabel.text=[[statusList objectAtIndex:indexPath.row]objectForKey:@"text"];
-    CGSize contentLabelSize = [contentLabel.text sizeWithFont:contentLabel.font constrainedToSize:CGSizeMake(contentLabel.frame.size.width, 2000.0f) lineBreakMode:UILineBreakModeWordWrap];
-    contentLabel.frame = CGRectMake(contentLabel.frame.origin.x, contentLabel.frame.origin.y, contentLabel.frame.size.width, contentLabelSize.height);
+    NSNull *null = (NSNull *)[self.avatarList objectAtIndex:indexPath.row];
+    if(![null isKindOfClass:[NSNull class]]){
+        [cell.avatarView setImage:[avatarList objectAtIndex:indexPath.row]];   
+    }
+    else{
+        NSLog(@"head=%@",[[self.statusList objectAtIndex:indexPath.row]objectForKey:@"head"]);
+        NSMutableString *headURL = [[NSMutableString alloc]initWithString:[[self.statusList objectAtIndex:indexPath.row]objectForKey:@"head"]];
+        if (![headURL isEqualToString:@""]) {
+            [headURL appendString:@"/100"];
+            AvatarLoader *loader = [[[AvatarLoader alloc]initWithIndexPath:indexPath AndURLString:headURL AndReceiver:self]autorelease];
+            [loader loadImg];
+            [headURL release];
+        }
+        else{
+            NSLog(@"headURL is empty");
+        }
+    }
+    cell.nameLabel.text = [[statusList objectAtIndex:indexPath.row]objectForKey:@"name"];
+    cell.contentLabel.text = [[statusList objectAtIndex:indexPath.row]objectForKey:@"text"];
+    CGSize contentLabelSize = [cell.contentLabel.text sizeWithFont:cell.contentLabel.font constrainedToSize:CGSizeMake(cell.contentLabel.frame.size.width, 2000.0f) lineBreakMode:UILineBreakModeWordWrap];
+    cell.contentLabel.frame = CGRectMake(cell.contentLabel.frame.origin.x, cell.contentLabel.frame.origin.y, cell.contentLabel.frame.size.width, contentLabelSize.height);
     return cell;
 }
 

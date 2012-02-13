@@ -1,19 +1,15 @@
 //
-//  MyWeibo.m
+//  MyHttpClient.m
 //  simple_weibo_test
 //
-//  Created by 和光 缪 on 12-2-12.
+//  Created by 和光 缪 on 12-2-13.
 //  Copyright 2012年 Shanghai University. All rights reserved.
 //
 
-#import "MyWeibo.h"
-#import "JSONKit.h"
+#import "MyHttpClient.h"
 
-@implementation MyWeibo
+@implementation MyHttpClient
 @synthesize receiver;
-
-static NSString * PUBLIC_TIMELINE_URL = @"http://open.t.qq.com/api/statuses/public_timeline?format=json";
-
 - (id)init
 {
     self = [super init];
@@ -23,40 +19,27 @@ static NSString * PUBLIC_TIMELINE_URL = @"http://open.t.qq.com/api/statuses/publ
     
     return self;
 }
-
--(id)initWithReceiver:(id<WeiboReceiver>)receiver
+-(id)initWithReceiver:(id<WeiboReceiver>)aReceiver
 {
     self = [super init];
     if(self)
     {
-        self.receiver = receiver;
+        self.receiver = aReceiver;
     }
     return self;
 }
 
--(void)dealloc
-{
-    [PUBLIC_TIMELINE_URL release];
-    [receiver release];
-    [receivedData release];
-    [super dealloc];
-}
-
 #pragma mark - network
 
--(void)getTimeline
+-(void)GETWithURLString:(NSString *)urlString
 {
     NSURLRequest *theRequest=[NSURLRequest requestWithURL:[NSURL
-                                                           URLWithString:PUBLIC_TIMELINE_URL]
+                                                           URLWithString:urlString]
                                               cachePolicy:NSURLRequestUseProtocolCachePolicy
                                           timeoutInterval:60.0];
-    // create the connection with the request
-    // and start loading the data
     NSURLConnection *theConnection=[[NSURLConnection alloc] initWithRequest:theRequest
                                                                    delegate:self];
     if (theConnection) {
-        // Create the NSMutableData to hold the received data.
-        // receivedData is an instance variable declared elsewhere.
         receivedData = [[NSMutableData data] retain];
     } else {
         // Inform the user that the connection failed.
@@ -77,9 +60,7 @@ static NSString * PUBLIC_TIMELINE_URL = @"http://open.t.qq.com/api/statuses/publ
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection 
 {
-    NSDictionary *timelineDict = [receivedData objectFromJSONData];
-    NSArray *statusesArray = [[timelineDict objectForKey:@"data"]objectForKey:@"info"];
-    [self.receiver updateTimeline:statusesArray];
+    //implement with subclass
     [connection release];
     
     
@@ -95,5 +76,10 @@ static NSString * PUBLIC_TIMELINE_URL = @"http://open.t.qq.com/api/statuses/publ
           [[error userInfo] objectForKey:NSErrorFailingURLStringKey]);
 }
 
+- (void)dealloc {
+    [receivedData release];
+    [receiver release];
+    [super dealloc];
+}
 
 @end

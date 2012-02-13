@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A45A58A514E9158F003A215C /* AvatarLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = A45A58A414E9158F003A215C /* AvatarLoader.m */; };
 		A478278D14E79C690040FAB8 /* MyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A478278B14E79C690040FAB8 /* MyTableViewController.m */; };
 		A478278E14E79C690040FAB8 /* MyTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A478278C14E79C690040FAB8 /* MyTableViewController.xib */; };
-		A478279314E7A12D0040FAB8 /* MyWeibo.m in Sources */ = {isa = PBXBuildFile; fileRef = A478279214E7A12D0040FAB8 /* MyWeibo.m */; };
 		A47827AA14E7C8260040FAB8 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A47827A914E7C8260040FAB8 /* CustomCell.xib */; };
 		A47827BA14E7E00B0040FAB8 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A47827B914E7E00B0040FAB8 /* JSONKit.m */; };
 		A47828E114E903B90040FAB8 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A47828E014E903B80040FAB8 /* CustomCell.m */; };
+		A47828E514E90B4B0040FAB8 /* MyHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A47828E414E90B4A0040FAB8 /* MyHttpClient.m */; };
+		A47828E814E90CBF0040FAB8 /* TimelineGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = A47828E714E90CBF0040FAB8 /* TimelineGetter.m */; };
 		A496B76914E78E76009E8D14 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A496B76814E78E76009E8D14 /* UIKit.framework */; };
 		A496B76B14E78E76009E8D14 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A496B76A14E78E76009E8D14 /* Foundation.framework */; };
 		A496B76D14E78E76009E8D14 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A496B76C14E78E76009E8D14 /* CoreGraphics.framework */; };
@@ -23,17 +25,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A45A58A314E9158F003A215C /* AvatarLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvatarLoader.h; sourceTree = "<group>"; };
+		A45A58A414E9158F003A215C /* AvatarLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvatarLoader.m; sourceTree = "<group>"; };
 		A478278A14E79C690040FAB8 /* MyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewController.h; sourceTree = "<group>"; };
 		A478278B14E79C690040FAB8 /* MyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewController.m; sourceTree = "<group>"; };
 		A478278C14E79C690040FAB8 /* MyTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTableViewController.xib; sourceTree = "<group>"; };
 		A478278F14E7A0420040FAB8 /* WeiboReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboReceiver.h; sourceTree = "<group>"; };
-		A478279114E7A12D0040FAB8 /* MyWeibo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWeibo.h; sourceTree = "<group>"; };
-		A478279214E7A12D0040FAB8 /* MyWeibo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWeibo.m; sourceTree = "<group>"; };
 		A47827A914E7C8260040FAB8 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		A47827B814E7E00B0040FAB8 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		A47827B914E7E00B0040FAB8 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		A47828DF14E903B80040FAB8 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		A47828E014E903B80040FAB8 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
+		A47828E314E90B4A0040FAB8 /* MyHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyHttpClient.h; sourceTree = "<group>"; };
+		A47828E414E90B4A0040FAB8 /* MyHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyHttpClient.m; sourceTree = "<group>"; };
+		A47828E614E90CBF0040FAB8 /* TimelineGetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineGetter.h; sourceTree = "<group>"; };
+		A47828E714E90CBF0040FAB8 /* TimelineGetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineGetter.m; sourceTree = "<group>"; };
 		A496B76414E78E76009E8D14 /* simple_weibo_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = simple_weibo_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A496B76814E78E76009E8D14 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A496B76A14E78E76009E8D14 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -65,8 +71,12 @@
 			isa = PBXGroup;
 			children = (
 				A478278F14E7A0420040FAB8 /* WeiboReceiver.h */,
-				A478279114E7A12D0040FAB8 /* MyWeibo.h */,
-				A478279214E7A12D0040FAB8 /* MyWeibo.m */,
+				A47828E314E90B4A0040FAB8 /* MyHttpClient.h */,
+				A47828E414E90B4A0040FAB8 /* MyHttpClient.m */,
+				A47828E614E90CBF0040FAB8 /* TimelineGetter.h */,
+				A47828E714E90CBF0040FAB8 /* TimelineGetter.m */,
+				A45A58A314E9158F003A215C /* AvatarLoader.h */,
+				A45A58A414E9158F003A215C /* AvatarLoader.m */,
 			);
 			name = Weibo;
 			sourceTree = "<group>";
@@ -204,9 +214,11 @@
 				A496B77514E78E76009E8D14 /* main.m in Sources */,
 				A496B77914E78E76009E8D14 /* simple_weibo_testAppDelegate.m in Sources */,
 				A478278D14E79C690040FAB8 /* MyTableViewController.m in Sources */,
-				A478279314E7A12D0040FAB8 /* MyWeibo.m in Sources */,
 				A47827BA14E7E00B0040FAB8 /* JSONKit.m in Sources */,
 				A47828E114E903B90040FAB8 /* CustomCell.m in Sources */,
+				A47828E514E90B4B0040FAB8 /* MyHttpClient.m in Sources */,
+				A47828E814E90CBF0040FAB8 /* TimelineGetter.m in Sources */,
+				A45A58A514E9158F003A215C /* AvatarLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
