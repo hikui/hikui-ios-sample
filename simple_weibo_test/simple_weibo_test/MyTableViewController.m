@@ -78,18 +78,9 @@ static const float FONT_SIZE = 17.0f;
 -(void)onReceiveArrayData:(NSArray *)data
 {
     self.statusList = data;
-    //NSLog(@"statusList retainCount: %d",statusList.retainCount);
+    NSLog(@"statusList retainCount: %d",statusList.retainCount);
     [table reloadData];
 }
-
--(void)onReceiveData:(NSObject *)data withDataType:(NSInteger)type
-{
-    if (type==Type_TimelineArray) {
-        self.statusList =(NSArray *)data;
-        [table reloadData];
-    }
-}
-
 -(void)dealloc
 {
     [FONT release];
@@ -133,6 +124,5 @@ static const float FONT_SIZE = 17.0f;
     contentLabel.frame = CGRectMake(contentLabel.frame.origin.x, contentLabel.frame.origin.y, contentLabel.frame.size.width, contentLabelSize.height);
     return cell;
 }
-#pragma mark - UI change methods
 
 @end
