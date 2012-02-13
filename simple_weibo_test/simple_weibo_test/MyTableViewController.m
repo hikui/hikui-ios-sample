@@ -14,6 +14,7 @@
 @synthesize myWeibo;
 @synthesize tvCell;
 @synthesize table;
+@synthesize avatarList;
 
 //consts to help calculate the height
 static const float CONTENT_LABEL_WIDTH = 280.0F;
@@ -47,6 +48,7 @@ static const float FONT_SIZE = 17.0f;
     // Do any additional setup after loading the view from its nib.
     myWeibo = [[MyWeibo alloc]initWithReceiver:self];
     
+    
 }
 
 - (void)viewDidUnload
@@ -75,10 +77,10 @@ static const float FONT_SIZE = 17.0f;
     NSLog(@"%@",data);
     [data release];
 }
--(void)onReceiveArrayData:(NSArray *)data
+-(void)updateTimeline:(NSArray *)data
 {
     self.statusList = data;
-    NSLog(@"statusList retainCount: %d",statusList.retainCount);
+    //NSLog(@"statusList retainCount: %d",statusList.retainCount);
     [table reloadData];
 }
 -(void)dealloc
@@ -86,6 +88,7 @@ static const float FONT_SIZE = 17.0f;
     [FONT release];
     [myWeibo release];
     [statusList release];
+    [avatarList release];
     [super dealloc];
 }
 

@@ -79,7 +79,7 @@ static NSString * PUBLIC_TIMELINE_URL = @"http://open.t.qq.com/api/statuses/publ
 {
     NSDictionary *timelineDict = [receivedData objectFromJSONData];
     NSArray *statusesArray = [[timelineDict objectForKey:@"data"]objectForKey:@"info"];
-    [self.receiver onReceiveArrayData:statusesArray];
+    [self.receiver updateTimeline:statusesArray];
     [connection release];
     
     

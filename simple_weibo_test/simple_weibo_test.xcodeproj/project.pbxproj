@@ -12,6 +12,7 @@
 		A478279314E7A12D0040FAB8 /* MyWeibo.m in Sources */ = {isa = PBXBuildFile; fileRef = A478279214E7A12D0040FAB8 /* MyWeibo.m */; };
 		A47827AA14E7C8260040FAB8 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A47827A914E7C8260040FAB8 /* CustomCell.xib */; };
 		A47827BA14E7E00B0040FAB8 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A47827B914E7E00B0040FAB8 /* JSONKit.m */; };
+		A47828E114E903B90040FAB8 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A47828E014E903B80040FAB8 /* CustomCell.m */; };
 		A496B76914E78E76009E8D14 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A496B76814E78E76009E8D14 /* UIKit.framework */; };
 		A496B76B14E78E76009E8D14 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A496B76A14E78E76009E8D14 /* Foundation.framework */; };
 		A496B76D14E78E76009E8D14 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A496B76C14E78E76009E8D14 /* CoreGraphics.framework */; };
@@ -31,6 +32,8 @@
 		A47827A914E7C8260040FAB8 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		A47827B814E7E00B0040FAB8 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		A47827B914E7E00B0040FAB8 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		A47828DF14E903B80040FAB8 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
+		A47828E014E903B80040FAB8 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		A496B76414E78E76009E8D14 /* simple_weibo_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = simple_weibo_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A496B76814E78E76009E8D14 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A496B76A14E78E76009E8D14 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -117,6 +120,8 @@
 				A478278B14E79C690040FAB8 /* MyTableViewController.m */,
 				A478278C14E79C690040FAB8 /* MyTableViewController.xib */,
 				A47827A914E7C8260040FAB8 /* CustomCell.xib */,
+				A47828DF14E903B80040FAB8 /* CustomCell.h */,
+				A47828E014E903B80040FAB8 /* CustomCell.m */,
 			);
 			path = simple_weibo_test;
 			sourceTree = "<group>";
@@ -201,6 +206,7 @@
 				A478278D14E79C690040FAB8 /* MyTableViewController.m in Sources */,
 				A478279314E7A12D0040FAB8 /* MyWeibo.m in Sources */,
 				A47827BA14E7E00B0040FAB8 /* JSONKit.m in Sources */,
+				A47828E114E903B90040FAB8 /* CustomCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
