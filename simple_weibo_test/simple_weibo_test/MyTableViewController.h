@@ -12,7 +12,7 @@
 
 @interface MyTableViewController : UIViewController <WeiboReceiver>
 @property (nonatomic, retain) NSArray *statusList;
-@property (nonatomic, retain) NSMutableArray *avatarList;
+//@property (nonatomic, retain) NSMutableArray *avatarList;
 //@property (nonatomic, retain) MyWeibo *myWeibo;
 @property (nonatomic, retain) IBOutlet UITableView *table;
 -(IBAction)itemPressed:(id)sender;

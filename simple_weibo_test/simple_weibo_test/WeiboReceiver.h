@@ -13,5 +13,6 @@
 @required
 -(void)onReceiveStringData:(NSString *)data;
 -(void)updateTableView:(NSArray *)data;
+@optional
 -(void)updateAvatarWithImage:(UIImage *)img AtIndex:(NSIndexPath *)indexPath;
 @end

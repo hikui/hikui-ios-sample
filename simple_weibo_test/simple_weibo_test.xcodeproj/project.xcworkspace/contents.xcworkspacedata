@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../../SDWebImage/SDWebImage.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "self:simple_weibo_test.xcodeproj">
    </FileRef>
 </Workspace>

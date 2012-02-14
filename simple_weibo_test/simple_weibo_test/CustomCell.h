@@ -6,7 +6,7 @@
 //  Copyright 2012年 Shanghai University. All rights reserved.
 //
 
-
+#import "UIImageView+WebCache.h"
 
 @interface CustomCell : UITableViewCell
 @property (nonatomic,retain) IBOutlet UILabel *nameLabel;
