@@ -22,7 +22,7 @@
     return self;
 }
 
--(id)initWithIndexPath:(NSIndexPath *)aIntexPath AndURLString:(NSString *)aUrl AndReceiver:(id<WeiboReceiver>)aReceiver
+-(id)initWithIndexPath:(NSIndexPath *)aIntexPath AndURLString:(NSString *)aUrl AndReceiver:(id<WeiboUIDelegate>)aReceiver
 {
     self = [super init];
     if (self) {

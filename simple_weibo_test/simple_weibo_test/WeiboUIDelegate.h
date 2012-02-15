@@ -1,5 +1,5 @@
 //
-//  WeiboReceiver.h
+//  WeiboUIDelegate.h
 //  simple_weibo_test
 //
 //  Created by 和光 缪 on 12-2-12.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol WeiboReceiver <NSObject>
+@protocol WeiboUIDelegate <NSObject>
 
 @required
 -(void)onReceiveStringData:(NSString *)data;

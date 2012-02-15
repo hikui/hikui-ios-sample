@@ -7,15 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "WeiboReceiver.h"
+#import "WeiboUIDelegate.h"
 
 @interface MyHttpClient : NSObject
 {
     NSMutableData *receivedData;
 }
 
-@property (nonatomic,retain) id<WeiboReceiver> receiver;
+@property (nonatomic,retain) id<WeiboUIDelegate> receiver;
 
--(id)initWithReceiver:(id<WeiboReceiver>)aReceiver;
+-(id)initWithReceiver:(id<WeiboUIDelegate>)aReceiver;
 -(void)GETWithURLString:(NSString *)urlString;
 @end

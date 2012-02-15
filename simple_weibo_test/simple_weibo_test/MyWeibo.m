@@ -1,15 +1,19 @@
 //
-//  MyHttpClient.m
+//  MyWeibo.m
 //  simple_weibo_test
 //
-//  Created by 和光 缪 on 12-2-13.
+//  Created by 和光 缪 on 12-2-12.
 //  Copyright 2012年 Shanghai University. All rights reserved.
 //
 
-#import "MyHttpClient.h"
+#import "MyWeibo.h"
+#import "JSONKit.h"
 
-@implementation MyHttpClient
+@implementation MyWeibo
 @synthesize receiver;
+
+static NSString * PUBLIC_TIMELINE_URL = @"http://open.t.qq.com/api/statuses/public_timeline?format=json";
+
 - (id)init
 {
     self = [super init];
@@ -19,27 +23,40 @@
     
     return self;
 }
--(id)initWithReceiver:(id<WeiboUIDelegate>)aReceiver
+
+-(id)initWithReceiver:(id<WeiboReceiver>)receiver
 {
     self = [super init];
     if(self)
     {
-        self.receiver = aReceiver;
+        self.receiver = receiver;
     }
     return self;
 }
 
+-(void)dealloc
+{
+    [PUBLIC_TIMELINE_URL release];
+    [receiver release];
+    [receivedData release];
+    [super dealloc];
+}
+
 #pragma mark - network
 
--(void)GETWithURLString:(NSString *)urlString
+-(void)getTimeline
 {
     NSURLRequest *theRequest=[NSURLRequest requestWithURL:[NSURL
-                                                           URLWithString:urlString]
+                                                           URLWithString:PUBLIC_TIMELINE_URL]
                                               cachePolicy:NSURLRequestUseProtocolCachePolicy
                                           timeoutInterval:60.0];
+    // create the connection with the request
+    // and start loading the data
     NSURLConnection *theConnection=[[NSURLConnection alloc] initWithRequest:theRequest
                                                                    delegate:self];
     if (theConnection) {
+        // Create the NSMutableData to hold the received data.
+        // receivedData is an instance variable declared elsewhere.
         receivedData = [[NSMutableData data] retain];
     } else {
         // Inform the user that the connection failed.
@@ -60,7 +77,9 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection 
 {
-    //implement with subclass
+    NSDictionary *timelineDict = [receivedData objectFromJSONData];
+    NSArray *statusesArray = [[timelineDict objectForKey:@"data"]objectForKey:@"info"];
+    [self.receiver updateTimeline:statusesArray];
     [connection release];
     
     
@@ -76,10 +95,5 @@
           [[error userInfo] objectForKey:NSErrorFailingURLStringKey]);
 }
 
-- (void)dealloc {
-    [receivedData release];
-    [receiver release];
-    [super dealloc];
-}
 
 @end

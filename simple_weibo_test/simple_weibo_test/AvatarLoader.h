@@ -11,6 +11,6 @@
 @interface AvatarLoader : MyHttpClient
 @property (nonatomic,retain) NSIndexPath *indexPath;
 @property (nonatomic,copy) NSString *url;
--(id)initWithIndexPath:(NSIndexPath *)aIntexPath AndURLString:(NSString *)aUrl AndReceiver:(id<WeiboReceiver>) aReceiver;
+-(id)initWithIndexPath:(NSIndexPath *)aIntexPath AndURLString:(NSString *)aUrl AndReceiver:(id<WeiboUIDelegate>) aReceiver;
 -(void)loadImg;
 @end

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		A45A58A514E9158F003A215C /* AvatarLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = A45A58A414E9158F003A215C /* AvatarLoader.m */; };
+		A45E874D14EB3C5700899223 /* PullRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A45E874C14EB3C5700899223 /* PullRefreshTableViewController.m */; };
+		A45E874F14EB3C6200899223 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = A45E874E14EB3C6200899223 /* arrow.png */; };
+		A45E875214EB3C9E00899223 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A45E875114EB3C9E00899223 /* QuartzCore.framework */; };
+		A45E876F14EB4C8300899223 /* anonymous.png in Resources */ = {isa = PBXBuildFile; fileRef = A45E876E14EB4C8300899223 /* anonymous.png */; };
 		A478278D14E79C690040FAB8 /* MyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A478278B14E79C690040FAB8 /* MyTableViewController.m */; };
 		A478278E14E79C690040FAB8 /* MyTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A478278C14E79C690040FAB8 /* MyTableViewController.xib */; };
 		A47827AA14E7C8260040FAB8 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A47827A914E7C8260040FAB8 /* CustomCell.xib */; };
@@ -27,10 +31,15 @@
 /* Begin PBXFileReference section */
 		A45A58A314E9158F003A215C /* AvatarLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvatarLoader.h; sourceTree = "<group>"; };
 		A45A58A414E9158F003A215C /* AvatarLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvatarLoader.m; sourceTree = "<group>"; };
+		A45E874B14EB3C5700899223 /* PullRefreshTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PullRefreshTableViewController.h; path = ../PullRefreshTableViewController.h; sourceTree = "<group>"; };
+		A45E874C14EB3C5700899223 /* PullRefreshTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PullRefreshTableViewController.m; path = ../PullRefreshTableViewController.m; sourceTree = "<group>"; };
+		A45E874E14EB3C6200899223 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arrow.png; path = ../arrow.png; sourceTree = "<group>"; };
+		A45E875114EB3C9E00899223 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A45E876E14EB4C8300899223 /* anonymous.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = anonymous.png; sourceTree = "<group>"; };
 		A478278A14E79C690040FAB8 /* MyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewController.h; sourceTree = "<group>"; };
 		A478278B14E79C690040FAB8 /* MyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewController.m; sourceTree = "<group>"; };
 		A478278C14E79C690040FAB8 /* MyTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTableViewController.xib; sourceTree = "<group>"; };
-		A478278F14E7A0420040FAB8 /* WeiboReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboReceiver.h; sourceTree = "<group>"; };
+		A478278F14E7A0420040FAB8 /* WeiboUIDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboUIDelegate.h; sourceTree = "<group>"; };
 		A47827A914E7C8260040FAB8 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		A47827B814E7E00B0040FAB8 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		A47827B914E7E00B0040FAB8 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
@@ -58,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A45E875214EB3C9E00899223 /* QuartzCore.framework in Frameworks */,
 				A496B76914E78E76009E8D14 /* UIKit.framework in Frameworks */,
 				A496B76B14E78E76009E8D14 /* Foundation.framework in Frameworks */,
 				A496B76D14E78E76009E8D14 /* CoreGraphics.framework in Frameworks */,
@@ -67,10 +77,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A45E875014EB3C6700899223 /* PullRefreshTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A45E874B14EB3C5700899223 /* PullRefreshTableViewController.h */,
+				A45E874C14EB3C5700899223 /* PullRefreshTableViewController.m */,
+			);
+			name = PullRefreshTableViewController;
+			sourceTree = "<group>";
+		};
+		A45E876B14EB4C5C00899223 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				A45E876E14EB4C8300899223 /* anonymous.png */,
+				A45E874E14EB3C6200899223 /* arrow.png */,
+			);
+			name = resources;
+			sourceTree = "<group>";
+		};
 		A478279014E7A1010040FAB8 /* Weibo */ = {
 			isa = PBXGroup;
 			children = (
-				A478278F14E7A0420040FAB8 /* WeiboReceiver.h */,
+				A478278F14E7A0420040FAB8 /* WeiboUIDelegate.h */,
 				A47828E314E90B4A0040FAB8 /* MyHttpClient.h */,
 				A47828E414E90B4A0040FAB8 /* MyHttpClient.m */,
 				A47828E614E90CBF0040FAB8 /* TimelineGetter.h */,
@@ -93,6 +121,7 @@
 		A496B75914E78E76009E8D14 = {
 			isa = PBXGroup;
 			children = (
+				A45E875114EB3C9E00899223 /* QuartzCore.framework */,
 				A496B76E14E78E76009E8D14 /* simple_weibo_test */,
 				A496B76714E78E76009E8D14 /* Frameworks */,
 				A496B76514E78E76009E8D14 /* Products */,
@@ -120,6 +149,8 @@
 		A496B76E14E78E76009E8D14 /* simple_weibo_test */ = {
 			isa = PBXGroup;
 			children = (
+				A45E876B14EB4C5C00899223 /* resources */,
+				A45E875014EB3C6700899223 /* PullRefreshTableViewController */,
 				A47827A114E7B3260040FAB8 /* JSONKit */,
 				A478279014E7A1010040FAB8 /* Weibo */,
 				A496B77714E78E76009E8D14 /* simple_weibo_testAppDelegate.h */,
@@ -201,6 +232,8 @@
 				A496B77C14E78E76009E8D14 /* MainWindow.xib in Resources */,
 				A478278E14E79C690040FAB8 /* MyTableViewController.xib in Resources */,
 				A47827AA14E7C8260040FAB8 /* CustomCell.xib in Resources */,
+				A45E874F14EB3C6200899223 /* arrow.png in Resources */,
+				A45E876F14EB4C8300899223 /* anonymous.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +252,7 @@
 				A47828E514E90B4B0040FAB8 /* MyHttpClient.m in Sources */,
 				A47828E814E90CBF0040FAB8 /* TimelineGetter.m in Sources */,
 				A45A58A514E9158F003A215C /* AvatarLoader.m in Sources */,
+				A45E874D14EB3C5700899223 /* PullRefreshTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
