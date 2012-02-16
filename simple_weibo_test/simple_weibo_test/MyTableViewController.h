@@ -15,7 +15,6 @@
 
 @property (nonatomic, retain) NSArray *statusList;
 @property (nonatomic, retain) NSMutableArray *avatarList;
-//@property (nonatomic, retain) IBOutlet UIBarButtonItem *navBarButton;
 -(IBAction)refreshItemButtonPressed:(id)sender;
 
 @end

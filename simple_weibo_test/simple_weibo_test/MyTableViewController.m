@@ -14,7 +14,6 @@
 
 @implementation MyTableViewController
 @synthesize statusList;
-//@synthesize navBarButton;
 @synthesize avatarList;
 
 
@@ -22,9 +21,8 @@
 static const float CONTENT_LABEL_WIDTH = 204.0f;
 static const float ORI_CONTENT_LABEL_HEIGHT = 39.0F;
 static const float ORI_TABLECELL_HEIGHT = 113.0f;
-static NSString *FONT = @"Helvetica";
+NSString *FONT = @"Helvetica";
 static const float FONT_SIZE = 17.0f;
-#define REFRESH_HEADER_HEIGHT 52.0f
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -53,15 +51,15 @@ static const float FONT_SIZE = 17.0f;
 									initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 
 									target:self 
 									action:@selector(refreshItemButtonPressed:)] autorelease];
-    [[self navigationItem]setLeftBarButtonItem:navBarButton];
+    self.navigationItem.leftBarButtonItem = navBarButton;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setupNav];
     // Do any additional setup after loading the view from its nib.
     //myWeibo = [[MyWeibo alloc]initWithReceiver:self];
+    [self setupNav];
 }
 
 - (void)viewDidUnload
@@ -91,7 +89,7 @@ static const float FONT_SIZE = 17.0f;
 
 -(IBAction)refreshItemButtonPressed:(id)sender
 {
-    [self refresh];
+    [self startLoading];
 }
 
 #pragma mark - WeiboUIDelegate

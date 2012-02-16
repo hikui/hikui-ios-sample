@@ -148,11 +148,12 @@
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.3];
     self.tableView.contentInset = UIEdgeInsetsMake(REFRESH_HEADER_HEIGHT, 0, 0, 0);
+    self.tableView.contentOffset = CGPointMake(0, -REFRESH_HEADER_HEIGHT);
     refreshLabel.text = self.textLoading;
     refreshArrow.hidden = YES;
     [refreshSpinner startAnimating];
     [UIView commitAnimations];
-
+    //[self performSelector:@selector(refresh) withObject:self afterDelay:2];
     // Refresh action!
     [self refresh];
 }
@@ -166,9 +167,6 @@
     [UIView setAnimationDuration:0.3];
     [UIView setAnimationDidStopSelector:@selector(stopLoadingComplete:finished:context:)];
     self.tableView.contentInset = UIEdgeInsetsZero;
-    UIEdgeInsets tableContentInset = self.tableView.contentInset;
-    tableContentInset.top = 0.0;
-    self.tableView.contentInset = tableContentInset;
     [refreshArrow layer].transform = CATransform3DMakeRotation(M_PI * 2, 0, 0, 1);
     [UIView commitAnimations];
 }
