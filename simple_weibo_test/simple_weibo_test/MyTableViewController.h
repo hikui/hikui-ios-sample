@@ -8,34 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "WeiboUIDelegate.h"
+#import "PullRefreshTableViewController.h"
 
 
-@interface MyTableViewController : UIViewController <WeiboUIDelegate>
-{
-    BOOL isLoading;
-    BOOL isDragging;
-    BOOL isPullRefresh;
+@interface MyTableViewController : PullRefreshTableViewController <WeiboUIDelegate>
 
-}
 @property (nonatomic, retain) NSArray *statusList;
 @property (nonatomic, retain) NSMutableArray *avatarList;
-//@property (nonatomic, retain) MyWeibo *myWeibo;
-@property (nonatomic, retain) IBOutlet UITableView *table;
--(IBAction)itemPressed:(id)sender;
-
-#pragma mark - pull to refresh
-@property (nonatomic, retain) UIView *refreshHeaderView;
-@property (nonatomic, retain) UILabel *refreshLabel;
-@property (nonatomic, retain) UIImageView *refreshArrow;
-@property (nonatomic, retain) UIActivityIndicatorView *refreshSpinner;
-@property (nonatomic, copy) NSString *textPull;
-@property (nonatomic, copy) NSString *textRelease;
-@property (nonatomic, copy) NSString *textLoading;
-
-- (void)setupStrings;
-- (void)addPullToRefreshHeader;
-- (void)startLoading;
-- (void)stopLoading;
-- (void)refresh;
+//@property (nonatomic, retain) IBOutlet UIBarButtonItem *navBarButton;
+-(IBAction)refreshItemButtonPressed:(id)sender;
 
 @end

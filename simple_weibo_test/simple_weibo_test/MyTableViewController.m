@@ -14,10 +14,8 @@
 
 @implementation MyTableViewController
 @synthesize statusList;
-//@synthesize myWeibo;
-@synthesize table;
+//@synthesize navBarButton;
 @synthesize avatarList;
-@synthesize textPull, textRelease, textLoading, refreshHeaderView, refreshLabel, refreshArrow, refreshSpinner;
 
 
 //consts to help calculate the height
@@ -48,13 +46,22 @@ static const float FONT_SIZE = 17.0f;
 
 #pragma mark - View lifecycle
 
+-(void)setupNav
+{
+    [[self navigationItem]setTitle:@"Timeline"];
+    UIBarButtonItem *navBarButton = [[[UIBarButtonItem alloc] 
+									initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 
+									target:self 
+									action:@selector(refreshItemButtonPressed:)] autorelease];
+    [[self navigationItem]setLeftBarButtonItem:navBarButton];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setupNav];
     // Do any additional setup after loading the view from its nib.
     //myWeibo = [[MyWeibo alloc]initWithReceiver:self];
-    [self setupStrings];
-    [self addPullToRefreshHeader];
 }
 
 - (void)viewDidUnload
@@ -76,24 +83,18 @@ static const float FONT_SIZE = 17.0f;
     //[myWeibo release];
     [statusList release];
     [avatarList release];
-    [refreshHeaderView release];
-    [refreshLabel release];
-    [refreshArrow release];
-    [refreshSpinner release];
-    [textPull release];
-    [textRelease release];
-    [textLoading release];
-    
     [super dealloc];
 }
 
 
-#pragma mark - WeiboUIDelegate
--(IBAction)itemPressed:(id)sender{
+#pragma mark - Event listeners
+
+-(IBAction)refreshItemButtonPressed:(id)sender
+{
     [self refresh];
-    //[myWeibo getTimeline];
-        
 }
+
+#pragma mark - WeiboUIDelegate
 
 -(void)onReceiveStringData:(NSString *)data
 {
@@ -114,7 +115,7 @@ static const float FONT_SIZE = 17.0f;
     }
     //NSLog(@"statusList retainCount: %d",statusList.retainCount);
     [self stopLoading];
-    [table reloadData];
+    [self.tableView reloadData];
 }
 -(void)updateAvatarWithImage:(UIImage *)img AtIndex:(NSIndexPath *)indexPath
 {
@@ -122,7 +123,7 @@ static const float FONT_SIZE = 17.0f;
     [indexPath retain];
     
     [self.avatarList replaceObjectAtIndex:indexPath.row withObject:img];
-    CustomCell *cell = (CustomCell *)[self.table cellForRowAtIndexPath:indexPath];
+    CustomCell *cell = (CustomCell *)[self.tableView cellForRowAtIndexPath:indexPath];
     [cell.avatarView setImage:img];
     //[cell setNeedsDisplay];
     [img release];
@@ -182,120 +183,9 @@ static const float FONT_SIZE = 17.0f;
 }
 
 #pragma mark - pull to refresh
-- (void)setupStrings{
-    textPull = [[NSString alloc] initWithString:@"下拉可以刷新..."];
-    textRelease = [[NSString alloc] initWithString:@"松开可以刷新..."];
-    textLoading = [[NSString alloc] initWithString:@"刷新..."];
-}
-
-- (void)addPullToRefreshHeader {
-    refreshHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0 - REFRESH_HEADER_HEIGHT, 320, REFRESH_HEADER_HEIGHT)];
-    refreshHeaderView.backgroundColor = [UIColor clearColor];
-    
-    refreshLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, REFRESH_HEADER_HEIGHT)];
-    refreshLabel.backgroundColor = [UIColor clearColor];
-    refreshLabel.font = [UIFont boldSystemFontOfSize:12.0];
-    refreshLabel.textAlignment = UITextAlignmentCenter;
-    
-    refreshArrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow.png"]];
-    //    refreshArrow.frame = CGRectMake(floorf((REFRESH_HEADER_HEIGHT - 27) / 2),
-    //                                    (floorf(REFRESH_HEADER_HEIGHT - 44) / 2),
-    //                                    27, 44);
-    refreshArrow.frame = CGRectMake(30,(REFRESH_HEADER_HEIGHT-44)/2, 27, 44);
-    refreshSpinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    //    refreshSpinner.frame = CGRectMake(floorf(floorf(REFRESH_HEADER_HEIGHT - 20) / 2), floorf((REFRESH_HEADER_HEIGHT - 20) / 2), 20, 20);
-    refreshSpinner.frame = CGRectMake(30, (REFRESH_HEADER_HEIGHT-20)/2, 20, 20);
-    refreshSpinner.hidesWhenStopped = YES;
-    
-    [refreshHeaderView addSubview:refreshLabel];
-    [refreshHeaderView addSubview:refreshArrow];
-    [refreshHeaderView addSubview:refreshSpinner];
-    [self.table addSubview:refreshHeaderView];
-}
-
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    NSLog(@"scrollViewWillBeginDragging");
-    if (isLoading) return;
-    isDragging = YES;
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView { //drag过程中产生
-    NSLog(@"scrollViewDidScroll");
-    NSLog(@"scrollView.contentOffset.y=%f",scrollView.contentOffset.y);
-    if (isLoading) {
-        //        // Update the content inset, good for section headers
-        //        if (scrollView.contentOffset.y > 0){}
-        ////            self.tableView.contentInset = UIEdgeInsetsZero;
-        //        else if (scrollView.contentOffset.y >= -REFRESH_HEADER_HEIGHT){}
-        ////            self.tableView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
-        return;
-    } else if (isDragging && scrollView.contentOffset.y < 0) {
-        // Update the arrow direction and label
-        [UIView beginAnimations:nil context:NULL];
-        if (scrollView.contentOffset.y < -REFRESH_HEADER_HEIGHT) {
-            // User is scrolling above the header
-            refreshLabel.text = self.textRelease;
-            [refreshArrow layer].transform = CATransform3DMakeRotation(M_PI, 0, 0, 1);
-        } else { // User is scrolling somewhere within the header
-            refreshLabel.text = self.textPull;
-            [refreshArrow layer].transform = CATransform3DMakeRotation(M_PI*2, 0, 0, 1);
-        }
-        [UIView commitAnimations];
-    }
-}
-
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-    if (isLoading) return;
-    isDragging = NO;
-    if (scrollView.contentOffset.y <= -REFRESH_HEADER_HEIGHT) {
-        // Released above the header
-        [self startLoading];
-    }
-}
-
-- (void)startLoading {
-    isLoading = YES;
-    
-    // Show the header
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:0.3];
-    self.table.contentInset = UIEdgeInsetsMake(REFRESH_HEADER_HEIGHT, 0, 0, 0);
-    refreshLabel.text = self.textLoading;
-    refreshArrow.hidden = YES;
-    [refreshSpinner startAnimating];
-    [UIView commitAnimations];
-    
-    // Refresh action!
-    [self refresh];
-}
-
-- (void)stopLoading {
-    isLoading = NO;
-    
-    // Hide the header
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDelegate:self];
-    [UIView setAnimationDuration:0.3];
-    [UIView setAnimationDidStopSelector:@selector(stopLoadingComplete:finished:context:)];
-    self.table.contentInset = UIEdgeInsetsZero;
-    UIEdgeInsets tableContentInset = self.table.contentInset;
-    tableContentInset.top = 0.0;
-    self.table.contentInset = tableContentInset;
-    [refreshArrow layer].transform = CATransform3DMakeRotation(M_PI * 2, 0, 0, 1);
-    [UIView commitAnimations];
-}
-
-- (void)stopLoadingComplete:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context {
-    // Reset the header
-    refreshLabel.text = self.textPull;
-    refreshArrow.hidden = NO;
-    [refreshSpinner stopAnimating];
-}
-
 - (void)refresh {
     //IMPORTANT! must call stopLoading after finish refresh.
     //see updateTableView
-    NSLog(@"itempressed");
     TimelineGetter *getter = [[[TimelineGetter alloc]initWithReceiver:self]autorelease];
     [getter GETWithURLString:@"http://open.t.qq.com/api/statuses/public_timeline?format=json"];
 }

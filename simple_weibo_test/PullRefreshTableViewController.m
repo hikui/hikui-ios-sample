@@ -108,8 +108,8 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView { //drag过程中产生
-    NSLog(@"scrollViewDidScroll");
-    NSLog(@"scrollView.contentOffset.y=%f",scrollView.contentOffset.y);
+//    NSLog(@"scrollViewDidScroll");
+//    NSLog(@"scrollView.contentOffset.y=%f",scrollView.contentOffset.y);
     if (isLoading) {
 //        // Update the content inset, good for section headers
 //        if (scrollView.contentOffset.y > 0){}
