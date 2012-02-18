@@ -14,9 +14,7 @@
 		A45E876F14EB4C8300899223 /* anonymous.png in Resources */ = {isa = PBXBuildFile; fileRef = A45E876E14EB4C8300899223 /* anonymous.png */; };
 		A478278D14E79C690040FAB8 /* MyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A478278B14E79C690040FAB8 /* MyTableViewController.m */; };
 		A478278E14E79C690040FAB8 /* MyTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A478278C14E79C690040FAB8 /* MyTableViewController.xib */; };
-		A47827AA14E7C8260040FAB8 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A47827A914E7C8260040FAB8 /* CustomCell.xib */; };
 		A47827BA14E7E00B0040FAB8 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A47827B914E7E00B0040FAB8 /* JSONKit.m */; };
-		A47828E114E903B90040FAB8 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A47828E014E903B80040FAB8 /* CustomCell.m */; };
 		A47828E514E90B4B0040FAB8 /* MyHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A47828E414E90B4A0040FAB8 /* MyHttpClient.m */; };
 		A47828E814E90CBF0040FAB8 /* TimelineGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = A47828E714E90CBF0040FAB8 /* TimelineGetter.m */; };
 		A496B76914E78E76009E8D14 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A496B76814E78E76009E8D14 /* UIKit.framework */; };
@@ -46,11 +44,8 @@
 		A478278B14E79C690040FAB8 /* MyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewController.m; sourceTree = "<group>"; };
 		A478278C14E79C690040FAB8 /* MyTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTableViewController.xib; sourceTree = "<group>"; };
 		A478278F14E7A0420040FAB8 /* WeiboUIDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboUIDelegate.h; sourceTree = "<group>"; };
-		A47827A914E7C8260040FAB8 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		A47827B814E7E00B0040FAB8 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		A47827B914E7E00B0040FAB8 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
-		A47828DF14E903B80040FAB8 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
-		A47828E014E903B80040FAB8 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		A47828E314E90B4A0040FAB8 /* MyHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyHttpClient.h; sourceTree = "<group>"; };
 		A47828E414E90B4A0040FAB8 /* MyHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyHttpClient.m; sourceTree = "<group>"; };
 		A47828E614E90CBF0040FAB8 /* TimelineGetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineGetter.h; sourceTree = "<group>"; };
@@ -206,8 +201,6 @@
 			isa = PBXGroup;
 			children = (
 				A4EEB65D14EEA9B200476A39 /* design */,
-				A47828DF14E903B80040FAB8 /* CustomCell.h */,
-				A47828E014E903B80040FAB8 /* CustomCell.m */,
 				A4EEB66014EF4D2000476A39 /* StatusCell.h */,
 				A4EEB66114EF4D2000476A39 /* StatusCell.m */,
 			);
@@ -246,7 +239,6 @@
 		A4EEB65D14EEA9B200476A39 /* design */ = {
 			isa = PBXGroup;
 			children = (
-				A47827A914E7C8260040FAB8 /* CustomCell.xib */,
 				A4EEB65E14EEA9D800476A39 /* StatusCell.xib */,
 			);
 			name = design;
@@ -305,7 +297,6 @@
 				A496B77314E78E76009E8D14 /* InfoPlist.strings in Resources */,
 				A496B77C14E78E76009E8D14 /* MainWindow.xib in Resources */,
 				A478278E14E79C690040FAB8 /* MyTableViewController.xib in Resources */,
-				A47827AA14E7C8260040FAB8 /* CustomCell.xib in Resources */,
 				A45E874F14EB3C6200899223 /* arrow.png in Resources */,
 				A45E876F14EB4C8300899223 /* anonymous.png in Resources */,
 				A4EEB65F14EEA9D800476A39 /* StatusCell.xib in Resources */,
@@ -324,7 +315,6 @@
 				A496B77914E78E76009E8D14 /* simple_weibo_testAppDelegate.m in Sources */,
 				A478278D14E79C690040FAB8 /* MyTableViewController.m in Sources */,
 				A47827BA14E7E00B0040FAB8 /* JSONKit.m in Sources */,
-				A47828E114E903B90040FAB8 /* CustomCell.m in Sources */,
 				A47828E514E90B4B0040FAB8 /* MyHttpClient.m in Sources */,
 				A47828E814E90CBF0040FAB8 /* TimelineGetter.m in Sources */,
 				A45A58A514E9158F003A215C /* AvatarLoader.m in Sources */,

@@ -7,7 +7,6 @@
 //
 
 #import "MyTableViewController.h"
-#import "CustomCell.h"
 #import "StatusCell.h"
 #import "TimelineGetter.h"
 #import "AvatarLoader.h"
@@ -21,11 +20,7 @@
 
 
 //consts to help calculate the height
-static const float CONTENT_LABEL_WIDTH = 204.0f;
-static const float ORI_CONTENT_LABEL_HEIGHT = 39.0F;
-static const float ORI_TABLECELL_HEIGHT = 113.0f;
-NSString *FONT = @"Helvetica";
-static const float FONT_SIZE = 17.0f;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -81,7 +76,6 @@ static const float FONT_SIZE = 17.0f;
 
 -(void)dealloc
 {
-    [FONT release];
     //[myWeibo release];
     [statusList release];
     [avatarList release];
