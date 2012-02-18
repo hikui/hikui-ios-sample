@@ -14,4 +14,5 @@
 -(void)onReceiveStringData:(NSString *)data;
 -(void)updateTableView:(NSArray *)data;
 -(void)updateAvatarWithImage:(UIImage *)img AtIndex:(NSIndexPath *)indexPath;
+-(void)updatePicture:(UIImage *)img AtIndex:(NSIndexPath *)indexPath;
 @end

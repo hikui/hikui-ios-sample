@@ -9,9 +9,6 @@
 #import "AvatarLoader.h"
 
 @implementation AvatarLoader
-@synthesize indexPath;
-@synthesize url;
-
 - (id)init
 {
     self = [super init];
@@ -22,36 +19,15 @@
     return self;
 }
 
--(id)initWithIndexPath:(NSIndexPath *)aIntexPath AndURLString:(NSString *)aUrl AndReceiver:(id<WeiboUIDelegate>)aReceiver
-{
-    self = [super init];
-    if (self) {
-        self.indexPath = aIntexPath;
-        self.url = aUrl;
-        self.receiver = aReceiver;
-    }
-    
-    return self;
-}
-
--(void)loadImg
-{
-    if(indexPath != nil && url != nil){
-        [self GETWithURLString:url];
-    }
-}
-
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     UIImage *img = [[UIImage alloc]initWithData:receivedData];
-    [self.receiver updateAvatarWithImage:img AtIndex:(NSIndexPath *)indexPath];
+    [self.receiver updateAvatarWithImage:img AtIndex:(NSIndexPath *)self.indexPath];
     [img release];
     [connection release];
 }
 
 - (void)dealloc {
-    [indexPath release];
-    [url release];
     [super dealloc];
 }
 @end

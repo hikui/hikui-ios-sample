@@ -26,6 +26,12 @@
 		A496B77514E78E76009E8D14 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A496B77414E78E76009E8D14 /* main.m */; };
 		A496B77914E78E76009E8D14 /* simple_weibo_testAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A496B77814E78E76009E8D14 /* simple_weibo_testAppDelegate.m */; };
 		A496B77C14E78E76009E8D14 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A496B77A14E78E76009E8D14 /* MainWindow.xib */; };
+		A4EEB65414EE915A00476A39 /* TencentMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EEB65314EE915A00476A39 /* TencentMessage.m */; };
+		A4EEB65B14EEA34600476A39 /* TencentTimeline.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EEB65A14EEA34600476A39 /* TencentTimeline.m */; };
+		A4EEB65F14EEA9D800476A39 /* StatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4EEB65E14EEA9D800476A39 /* StatusCell.xib */; };
+		A4EEB66214EF4D2000476A39 /* StatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EEB66114EF4D2000476A39 /* StatusCell.m */; };
+		A4EEB69614EFAB7100476A39 /* defaultImg.png in Resources */ = {isa = PBXBuildFile; fileRef = A4EEB69514EFAB7100476A39 /* defaultImg.png */; };
+		A4EEB69914EFC32800476A39 /* PictureDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EEB69814EFC32800476A39 /* PictureDownloader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +66,16 @@
 		A496B77714E78E76009E8D14 /* simple_weibo_testAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = simple_weibo_testAppDelegate.h; sourceTree = "<group>"; };
 		A496B77814E78E76009E8D14 /* simple_weibo_testAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = simple_weibo_testAppDelegate.m; sourceTree = "<group>"; };
 		A496B77B14E78E76009E8D14 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		A4EEB65214EE915A00476A39 /* TencentMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TencentMessage.h; sourceTree = "<group>"; };
+		A4EEB65314EE915A00476A39 /* TencentMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TencentMessage.m; sourceTree = "<group>"; };
+		A4EEB65914EEA34600476A39 /* TencentTimeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TencentTimeline.h; sourceTree = "<group>"; };
+		A4EEB65A14EEA34600476A39 /* TencentTimeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TencentTimeline.m; sourceTree = "<group>"; };
+		A4EEB65E14EEA9D800476A39 /* StatusCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusCell.xib; sourceTree = "<group>"; };
+		A4EEB66014EF4D2000476A39 /* StatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusCell.h; sourceTree = "<group>"; };
+		A4EEB66114EF4D2000476A39 /* StatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusCell.m; sourceTree = "<group>"; };
+		A4EEB69514EFAB7100476A39 /* defaultImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultImg.png; sourceTree = "<group>"; };
+		A4EEB69714EFC32800476A39 /* PictureDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureDownloader.h; sourceTree = "<group>"; };
+		A4EEB69814EFC32800476A39 /* PictureDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureDownloader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,13 +105,14 @@
 		A45E876B14EB4C5C00899223 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				A4EEB69514EFAB7100476A39 /* defaultImg.png */,
 				A45E876E14EB4C8300899223 /* anonymous.png */,
 				A45E874E14EB3C6200899223 /* arrow.png */,
 			);
 			name = resources;
 			sourceTree = "<group>";
 		};
-		A478279014E7A1010040FAB8 /* Weibo */ = {
+		A478279014E7A1010040FAB8 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				A478278F14E7A0420040FAB8 /* WeiboUIDelegate.h */,
@@ -105,8 +122,10 @@
 				A47828E714E90CBF0040FAB8 /* TimelineGetter.m */,
 				A45A58A314E9158F003A215C /* AvatarLoader.h */,
 				A45A58A414E9158F003A215C /* AvatarLoader.m */,
+				A4EEB69714EFC32800476A39 /* PictureDownloader.h */,
+				A4EEB69814EFC32800476A39 /* PictureDownloader.m */,
 			);
-			name = Weibo;
+			name = Network;
 			sourceTree = "<group>";
 		};
 		A47827A114E7B3260040FAB8 /* JSONKit */ = {
@@ -149,20 +168,14 @@
 		A496B76E14E78E76009E8D14 /* simple_weibo_test */ = {
 			isa = PBXGroup;
 			children = (
+				A4EEB65014EE90EE00476A39 /* Model */,
+				A4EEB64F14EE90D800476A39 /* Application */,
+				A4EEB64E14EE90BA00476A39 /* View */,
+				A4EEB64C14EE908F00476A39 /* ViewController */,
 				A45E876B14EB4C5C00899223 /* resources */,
-				A45E875014EB3C6700899223 /* PullRefreshTableViewController */,
 				A47827A114E7B3260040FAB8 /* JSONKit */,
-				A478279014E7A1010040FAB8 /* Weibo */,
-				A496B77714E78E76009E8D14 /* simple_weibo_testAppDelegate.h */,
-				A496B77814E78E76009E8D14 /* simple_weibo_testAppDelegate.m */,
-				A496B77A14E78E76009E8D14 /* MainWindow.xib */,
+				A478279014E7A1010040FAB8 /* Network */,
 				A496B76F14E78E76009E8D14 /* Supporting Files */,
-				A478278A14E79C690040FAB8 /* MyTableViewController.h */,
-				A478278B14E79C690040FAB8 /* MyTableViewController.m */,
-				A478278C14E79C690040FAB8 /* MyTableViewController.xib */,
-				A47827A914E7C8260040FAB8 /* CustomCell.xib */,
-				A47828DF14E903B80040FAB8 /* CustomCell.h */,
-				A47828E014E903B80040FAB8 /* CustomCell.m */,
 			);
 			path = simple_weibo_test;
 			sourceTree = "<group>";
@@ -176,6 +189,67 @@
 				A496B77614E78E76009E8D14 /* simple_weibo_test-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A4EEB64C14EE908F00476A39 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A478278A14E79C690040FAB8 /* MyTableViewController.h */,
+				A478278B14E79C690040FAB8 /* MyTableViewController.m */,
+				A478278C14E79C690040FAB8 /* MyTableViewController.xib */,
+				A45E875014EB3C6700899223 /* PullRefreshTableViewController */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		A4EEB64E14EE90BA00476A39 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A4EEB65D14EEA9B200476A39 /* design */,
+				A47828DF14E903B80040FAB8 /* CustomCell.h */,
+				A47828E014E903B80040FAB8 /* CustomCell.m */,
+				A4EEB66014EF4D2000476A39 /* StatusCell.h */,
+				A4EEB66114EF4D2000476A39 /* StatusCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A4EEB64F14EE90D800476A39 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				A496B77714E78E76009E8D14 /* simple_weibo_testAppDelegate.h */,
+				A496B77814E78E76009E8D14 /* simple_weibo_testAppDelegate.m */,
+				A496B77A14E78E76009E8D14 /* MainWindow.xib */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		A4EEB65014EE90EE00476A39 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A4EEB65114EE90FD00476A39 /* TencentWeibo */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A4EEB65114EE90FD00476A39 /* TencentWeibo */ = {
+			isa = PBXGroup;
+			children = (
+				A4EEB65214EE915A00476A39 /* TencentMessage.h */,
+				A4EEB65314EE915A00476A39 /* TencentMessage.m */,
+				A4EEB65914EEA34600476A39 /* TencentTimeline.h */,
+				A4EEB65A14EEA34600476A39 /* TencentTimeline.m */,
+			);
+			name = TencentWeibo;
+			sourceTree = "<group>";
+		};
+		A4EEB65D14EEA9B200476A39 /* design */ = {
+			isa = PBXGroup;
+			children = (
+				A47827A914E7C8260040FAB8 /* CustomCell.xib */,
+				A4EEB65E14EEA9D800476A39 /* StatusCell.xib */,
+			);
+			name = design;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +308,8 @@
 				A47827AA14E7C8260040FAB8 /* CustomCell.xib in Resources */,
 				A45E874F14EB3C6200899223 /* arrow.png in Resources */,
 				A45E876F14EB4C8300899223 /* anonymous.png in Resources */,
+				A4EEB65F14EEA9D800476A39 /* StatusCell.xib in Resources */,
+				A4EEB69614EFAB7100476A39 /* defaultImg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +329,10 @@
 				A47828E814E90CBF0040FAB8 /* TimelineGetter.m in Sources */,
 				A45A58A514E9158F003A215C /* AvatarLoader.m in Sources */,
 				A45E874D14EB3C5700899223 /* PullRefreshTableViewController.m in Sources */,
+				A4EEB65414EE915A00476A39 /* TencentMessage.m in Sources */,
+				A4EEB65B14EEA34600476A39 /* TencentTimeline.m in Sources */,
+				A4EEB66214EF4D2000476A39 /* StatusCell.m in Sources */,
+				A4EEB69914EFC32800476A39 /* PictureDownloader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,13 +8,16 @@
 
 #import "MyTableViewController.h"
 #import "CustomCell.h"
+#import "StatusCell.h"
 #import "TimelineGetter.h"
 #import "AvatarLoader.h"
-#import <QuartzCore/QuartzCore.h>
+#import "TencentMessage.h"
+#import "PictureDownloader.h"
 
 @implementation MyTableViewController
 @synthesize statusList;
-@synthesize avatarList;
+@synthesize tcMessagesList;
+@synthesize avatarList,picturesDict;
 
 
 //consts to help calculate the height
@@ -60,6 +63,7 @@ static const float FONT_SIZE = 17.0f;
     // Do any additional setup after loading the view from its nib.
     //myWeibo = [[MyWeibo alloc]initWithReceiver:self];
     [self setupNav];
+    picturesDict = [[NSMutableDictionary alloc]init];
 }
 
 - (void)viewDidUnload
@@ -81,6 +85,8 @@ static const float FONT_SIZE = 17.0f;
     //[myWeibo release];
     [statusList release];
     [avatarList release];
+    [tcMessagesList release];
+    [picturesDict release];
     [super dealloc];
 }
 
@@ -102,11 +108,9 @@ static const float FONT_SIZE = 17.0f;
 }
 -(void)updateTableView:(NSArray *)data
 {
-    self.statusList = data;
+    self.tcMessagesList = data;
     //init avatarList
-    if(avatarList != nil){
-        [avatarList release];
-    }
+    [avatarList release];
     avatarList = [[NSMutableArray alloc]init];
     for (int i= 0; i<data.count; i++) {
         [self.avatarList addObject:[NSNull null]];
@@ -121,9 +125,25 @@ static const float FONT_SIZE = 17.0f;
     [indexPath retain];
     
     [self.avatarList replaceObjectAtIndex:indexPath.row withObject:img];
-    CustomCell *cell = (CustomCell *)[self.tableView cellForRowAtIndexPath:indexPath];
-    [cell.avatarView setImage:img];
-    //[cell setNeedsDisplay];
+//    CustomCell *cell = (CustomCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+//    [cell.avatarView setImage:img];
+//    //[cell setNeedsDisplay];
+//    [img release];
+    StatusCell *cell = (StatusCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+    [cell.headImage setImage:img];
+    [img release];
+    [cell setNeedsDisplay];
+    [indexPath release];
+}
+
+-(void)updatePicture:(UIImage *)img AtIndex:(NSIndexPath *)indexPath
+{
+    [img retain];
+    [indexPath retain];
+    [picturesDict setObject:img forKey:indexPath];
+    StatusCell *cell = (StatusCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+    [cell.picture setImage:img];
+    [cell setNeedsDisplay];
     [img release];
     [indexPath release];
 }
@@ -131,54 +151,62 @@ static const float FONT_SIZE = 17.0f;
 #pragma mark - tableview delegate
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
-    return statusList.count;
+    return tcMessagesList.count;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    NSString *contentText = [[statusList objectAtIndex:indexPath.row]objectForKey:@"text"];
-    UIFont *font = [UIFont fontWithName:FONT size:FONT_SIZE];
-    CGSize contentLabelSize = [contentText sizeWithFont:font constrainedToSize:CGSizeMake(CONTENT_LABEL_WIDTH, 2000.0f) lineBreakMode:UILineBreakModeWordWrap];
-    return ORI_TABLECELL_HEIGHT+(contentLabelSize.height-ORI_CONTENT_LABEL_HEIGHT);
-    
+    TencentMessage *aMsg = [tcMessagesList objectAtIndex:indexPath.row];
+    return aMsg.cellHeight;
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CustomCellIdentifier = @"CustomCellIdentifier ";
-    CustomCell *cell = (CustomCell *)[tableView dequeueReusableCellWithIdentifier: CustomCellIdentifier];
-    if (cell == nil) {
-        NSArray *nib = [[NSBundle mainBundle]loadNibNamed:@"CustomCell" owner:self options:nil];
-        if(nib.count>0){
-            cell=(CustomCell *)[nib objectAtIndex:0];
-        }else{
-            NSLog(@"faild to load customcell nib file");
-        }
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *) indexPath
+{
+    static NSString *CustomCellIdentifier = @"StatusCell ";
+    StatusCell *cell = (StatusCell *)[tableView dequeueReusableCellWithIdentifier:CustomCellIdentifier];
+    if(cell == nil){
+        cell = [[[StatusCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CustomCellIdentifier]autorelease];
     }
+    TencentMessage * currMessage = [tcMessagesList objectAtIndex:indexPath.row];
+    [cell updateMessage:currMessage];
+    
+    //load avatar:
     NSNull *null = (NSNull *)[self.avatarList objectAtIndex:indexPath.row];
     if(![null isKindOfClass:[NSNull class]]){
-        [cell.avatarView setImage:[avatarList objectAtIndex:indexPath.row]];   
+        [cell.headImage setImage:[avatarList objectAtIndex:indexPath.row]];   
     }
     else{
-        [cell.avatarView setImage:[UIImage imageNamed:@"anonymous.png"]];
-        NSLog(@"head=%@",[[self.statusList objectAtIndex:indexPath.row]objectForKey:@"head"]);
-        NSMutableString *headURL = [[NSMutableString alloc]initWithString:[[self.statusList objectAtIndex:indexPath.row]objectForKey:@"head"]];
+        [cell.headImage setImage:[UIImage imageNamed:@"anonymous.png"]];
+        NSMutableString *headURL = [[NSMutableString alloc]initWithString:currMessage.headUrl];
         if (![headURL isEqualToString:@""]) {
             [headURL appendString:@"/100"];
             AvatarLoader *loader = [[[AvatarLoader alloc]initWithIndexPath:indexPath AndURLString:headURL AndReceiver:self]autorelease];
             [loader loadImg];
         }
-        else{
-            //load default img
-        }
         [headURL release];
     }
-    cell.nameLabel.text = [[statusList objectAtIndex:indexPath.row]objectForKey:@"name"];
-    cell.contentLabel.text = [[statusList objectAtIndex:indexPath.row]objectForKey:@"text"];
-    CGSize contentLabelSize = [cell.contentLabel.text sizeWithFont:cell.contentLabel.font constrainedToSize:CGSizeMake(cell.contentLabel.frame.size.width, 2000.0f) lineBreakMode:UILineBreakModeWordWrap];
-    cell.contentLabel.frame = CGRectMake(cell.contentLabel.frame.origin.x, cell.contentLabel.frame.origin.y, cell.contentLabel.frame.size.width, contentLabelSize.height);
+    
+    //load picture
+    if((NSNull *)currMessage.pictureUrl != [NSNull null]){
+        UIImage * picture = [picturesDict objectForKey:indexPath];
+        if(picture == nil){
+            picture = [UIImage imageNamed:@"defaultImg.png"];
+            NSMutableString *picUrl = [[NSMutableString alloc]initWithString:currMessage.pictureUrl];
+            if(![picUrl isEqualToString:@""]){
+                [picUrl appendString:@"/160"];
+                PictureDownloader *picDownloader = [[[PictureDownloader alloc]initWithIndexPath:indexPath AndURLString:picUrl AndReceiver:self]autorelease];
+                [picDownloader loadImg];
+            }
+            [picUrl release];
+        }
+        [cell.picture setImage:picture];
+    }
+        
+    [cell updateFrames];
     return cell;
 }
+
 
 #pragma mark - pull to refresh
 - (void)refresh {

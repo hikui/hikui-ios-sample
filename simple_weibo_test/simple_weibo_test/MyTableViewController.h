@@ -12,9 +12,10 @@
 
 
 @interface MyTableViewController : PullRefreshTableViewController <WeiboUIDelegate>
-
 @property (nonatomic, retain) NSArray *statusList;
+@property (nonatomic, copy) NSArray *tcMessagesList;
 @property (nonatomic, retain) NSMutableArray *avatarList;
+@property (nonatomic, retain) NSMutableDictionary *picturesDict;
 -(IBAction)refreshItemButtonPressed:(id)sender;
 
 @end

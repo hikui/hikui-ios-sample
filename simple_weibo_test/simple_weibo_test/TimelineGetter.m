@@ -8,6 +8,7 @@
 
 #import "TimelineGetter.h"
 #import "JSONKit.h"
+#import "TencentMessage.h"
 
 @implementation TimelineGetter
 
@@ -25,7 +26,14 @@
 {
     NSDictionary *timelineDict = [receivedData objectFromJSONData];
     NSArray *statusesArray = [[timelineDict objectForKey:@"data"]objectForKey:@"info"];
-    [self.receiver updateTableView:statusesArray];
+    NSMutableArray *tcMessagesArray = [[NSMutableArray alloc]init];
+    for(NSDictionary *aStatus in statusesArray){
+        TencentMessage *aTcMessage = [[TencentMessage alloc]initWithJSONDict:aStatus];
+        [tcMessagesArray addObject:aTcMessage];
+        [aTcMessage release];
+    }
+    [self.receiver updateTableView:tcMessagesArray];
+    [tcMessagesArray release];
     [connection release];
 
 }
