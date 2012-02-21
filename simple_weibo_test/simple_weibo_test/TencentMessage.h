@@ -40,13 +40,15 @@ enum TCMsgStatusType{
     enum TCMessageType messageType;
     enum TCMsgStatusType statysType;
     CGFloat cellHeight;//tableView的cell可能的高度
+    CGFloat textHeight;
+    CGFloat subTextHeight;
 }
 @property(readwrite, copy) NSString *text, *name, *nick, *pictureUrl, *headUrl, *location;
 @property(readwrite, retain)NSDate *timestamp;
 @property(readwrite, retain)TencentMessage *source;
 @property(readwrite)enum TCMessageType messageType;
 @property(readwrite)enum TCMsgStatusType statusType;
-@property(readonly)CGFloat cellHeight;
+@property(readwrite)CGFloat cellHeight,textHeight,subTextHeight;
 
 -(id)initWithJSONDict:(NSDictionary *)data;
 //修改text或者source之后必须调用

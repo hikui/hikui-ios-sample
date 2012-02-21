@@ -12,15 +12,17 @@
 #import "AvatarLoader.h"
 #import "TencentMessage.h"
 #import "PictureDownloader.h"
+#import "TencentMessage.h"
+
+#define CACHE_PATH @"/Documents"
 
 @implementation MyTableViewController
-@synthesize statusList;
+//@synthesize statusList;
 @synthesize tcMessagesList;
 @synthesize avatarList,picturesDict;
 
 
 //consts to help calculate the height
-
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -44,12 +46,45 @@
 
 -(void)setupNav
 {
-    [[self navigationItem]setTitle:@"Timeline"];
+    [[self navigationItem]setTitle:@"随便看看"];
     UIBarButtonItem *navBarButton = [[[UIBarButtonItem alloc] 
 									initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 
 									target:self 
 									action:@selector(refreshItemButtonPressed:)] autorelease];
     self.navigationItem.leftBarButtonItem = navBarButton;
+}
+
+-(void)setupTimeline
+{
+    NSString *path = [NSHomeDirectory() stringByAppendingString:CACHE_PATH];
+    //[[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:nil];
+    NSString *archivePath = [path stringByAppendingString:@"/timeline.archive"];
+    NSArray *archivedTimeline = [NSKeyedUnarchiver unarchiveObjectWithFile:archivePath];
+    tcMessagesList = [[NSMutableArray alloc]initWithArray:archivedTimeline];
+    if(tcMessagesList == nil){
+        tcMessagesList = [[NSMutableArray alloc]init];
+    }
+    [avatarList release];
+    avatarList = [[NSMutableArray alloc]init];
+    //NSLog(@"saved tcmessages count:%d",tcMessagesList.count);
+    for (int i= 0; i<tcMessagesList.count; i++) {
+        [avatarList addObject:[NSNull null]];
+    }
+    
+    
+//	[[NSFileManager defaultManager] createDirectoryAtPath:path attributes:nil];
+}
+
+-(void)saveTimeline
+{
+    NSString *path = [NSHomeDirectory() stringByAppendingString:CACHE_PATH];
+    [[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:nil];
+    NSString *archivePath = [path stringByAppendingString:@"/timeline.archive"];
+    BOOL result = [NSKeyedArchiver archiveRootObject:tcMessagesList
+                                              toFile:archivePath];
+    if (result) {
+        NSLog(@"save timeline succeed");
+    }
 }
 
 - (void)viewDidLoad
@@ -58,6 +93,7 @@
     // Do any additional setup after loading the view from its nib.
     //myWeibo = [[MyWeibo alloc]initWithReceiver:self];
     [self setupNav];
+    [self setupTimeline];
     picturesDict = [[NSMutableDictionary alloc]init];
 }
 
@@ -66,6 +102,10 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    
+    avatarList = nil;
+    tcMessagesList = nil;
+    picturesDict = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -77,7 +117,7 @@
 -(void)dealloc
 {
     //[myWeibo release];
-    [statusList release];
+//    [statusList release];
     [avatarList release];
     [tcMessagesList release];
     [picturesDict release];
@@ -100,29 +140,35 @@
     NSLog(@"%@",data);
     [data release];
 }
+
+-(void)insertIntoTimeline:(NSArray *)data
+{
+    if(tcMessagesList != nil){
+        int i = 0;
+        for(TencentMessage *aMessage in data){
+            [tcMessagesList insertObject:aMessage atIndex:i++];
+        }
+    }
+}
+
 -(void)updateTableView:(NSArray *)data
 {
-    self.tcMessagesList = data;
-    //init avatarList
+    [self insertIntoTimeline:data];
     [avatarList release];
     avatarList = [[NSMutableArray alloc]init];
-    for (int i= 0; i<data.count; i++) {
+    for (int i= 0; i<tcMessagesList.count; i++) {
         [self.avatarList addObject:[NSNull null]];
     }
-    //NSLog(@"statusList retainCount: %d",statusList.retainCount);
     [self stopLoading];
+    [self saveTimeline];
     [self.tableView reloadData];
 }
 -(void)updateAvatarWithImage:(UIImage *)img AtIndex:(NSIndexPath *)indexPath
 {
     [img retain];
     [indexPath retain];
-    
+    //NSLog(@"%@",avatarList);
     [self.avatarList replaceObjectAtIndex:indexPath.row withObject:img];
-//    CustomCell *cell = (CustomCell *)[self.tableView cellForRowAtIndexPath:indexPath];
-//    [cell.avatarView setImage:img];
-//    //[cell setNeedsDisplay];
-//    [img release];
     StatusCell *cell = (StatusCell *)[self.tableView cellForRowAtIndexPath:indexPath];
     [cell.headImage setImage:img];
     [img release];

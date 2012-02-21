@@ -20,13 +20,18 @@
     UILabel *subMsgTextLabel;
     UIImageView *subPicture;
     TencentMessage *message;
+    UIView *subView;
 }
 
 
 @property (nonatomic, retain) UIImageView *headImage, *picture, *subPicture;
+@property (nonatomic, retain) UIView *subView;
 @property (nonatomic, retain) UILabel *msgTextLabel, *nameLabel, *subNameLabel, *subMsgTextLabel;
 @property (readwrite, retain) TencentMessage *message;
-+(CGFloat)calculateCellHeightWithText:(NSString *)text Source:(TencentMessage *)message HasImage:(BOOL)hasImage;
+
+//+(CGFloat)calculateCellHeightWithText:(NSString *)text Source:(TencentMessage *)source HasImage:(BOOL)hasImage;
+
++(void)updateMyTextHeightAndSubTextHeightAndCellHeight:(TencentMessage *)aMessage;
 
 -(void)updateMessage:(TencentMessage *)aMessage;
 -(void)updateFrames;
