@@ -28,7 +28,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "197"
          endingLineNumber = "197"
-         landmarkName = "-tableView:numberOfRowsInSection:"
+         landmarkName = "-tableView:heightForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -56,7 +56,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "198"
          endingLineNumber = "198"
-         landmarkName = "-tableView:numberOfRowsInSection:"
+         landmarkName = "-tableView:heightForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -70,7 +70,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "199"
          endingLineNumber = "199"
-         landmarkName = "-tableView:numberOfRowsInSection:"
+         landmarkName = "-tableView:heightForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint

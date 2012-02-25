@@ -112,9 +112,9 @@
 //    NSLog(@"scrollView.contentOffset.y=%f",scrollView.contentOffset.y);
     if (isLoading) {
 //        // Update the content inset, good for section headers
-//        if (scrollView.contentOffset.y > 0){}
+//        if (scrollView.contentOffset.y > 0)
 ////            self.tableView.contentInset = UIEdgeInsetsZero;
-//        else if (scrollView.contentOffset.y >= -REFRESH_HEADER_HEIGHT){}
+//        else if (scrollView.contentOffset.y >= -REFRESH_HEADER_HEIGHT)
 ////            self.tableView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
         return;
     } else if (isDragging && scrollView.contentOffset.y < 0) {

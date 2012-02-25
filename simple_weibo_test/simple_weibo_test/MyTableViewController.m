@@ -64,7 +64,6 @@
     if(tcMessagesList == nil){
         tcMessagesList = [[NSMutableArray alloc]init];
     }
-    [avatarList release];
     avatarList = [[NSMutableArray alloc]init];
     //NSLog(@"saved tcmessages count:%d",tcMessagesList.count);
     for (int i= 0; i<tcMessagesList.count; i++) {
@@ -217,14 +216,17 @@
         [cell.headImage setImage:[avatarList objectAtIndex:indexPath.row]];   
     }
     else{
-        [cell.headImage setImage:[UIImage imageNamed:@"anonymous.png"]];
-        NSMutableString *headURL = [[NSMutableString alloc]initWithString:currMessage.headUrl];
-        if (![headURL isEqualToString:@""]) {
-            [headURL appendString:@"/100"];
-            AvatarLoader *loader = [[[AvatarLoader alloc]initWithIndexPath:indexPath AndURLString:headURL AndReceiver:self]autorelease];
-            [loader loadImg];
+        if (self.tableView.dragging == NO && self.tableView.decelerating == NO){
+            [cell.headImage setImage:[UIImage imageNamed:@"anonymous.png"]];
+            NSMutableString *headURL = [[NSMutableString alloc]initWithString:currMessage.headUrl];
+            if (![headURL isEqualToString:@""]) {
+                [headURL appendString:@"/100"];
+                AvatarLoader *loader = [[[AvatarLoader alloc]initWithIndexPath:indexPath AndURLString:headURL AndReceiver:self]autorelease];
+                [loader loadImg];
+            }
+            [headURL release]; 
         }
-        [headURL release];
+        
     }
     
     //load picture
@@ -232,19 +234,57 @@
         UIImage * picture = [picturesDict objectForKey:indexPath];
         if(picture == nil){
             picture = [UIImage imageNamed:@"defaultImg.png"];
-            NSMutableString *picUrl = [[NSMutableString alloc]initWithString:currMessage.pictureUrl];
-            if(![picUrl isEqualToString:@""]){
-                [picUrl appendString:@"/160"];
-                PictureDownloader *picDownloader = [[[PictureDownloader alloc]initWithIndexPath:indexPath AndURLString:picUrl AndReceiver:self]autorelease];
-                [picDownloader loadImg];
+            if (self.tableView.dragging == NO && self.tableView.decelerating == NO){
+                NSMutableString *picUrl = [[NSMutableString alloc]initWithString:currMessage.pictureUrl];
+                if(![picUrl isEqualToString:@""]){
+                    [picUrl appendString:@"/160"];
+                    PictureDownloader *picDownloader = [[[PictureDownloader alloc]initWithIndexPath:indexPath AndURLString:picUrl AndReceiver:self]autorelease];
+                    [picDownloader loadImg];
+                }
+                [picUrl release];
             }
-            [picUrl release];
         }
         [cell.picture setImage:picture];
     }
         
     [cell updateFrames];
     return cell;
+}
+
+-(void)downloadImgs
+{
+    NSArray *visiblePaths = [self.tableView indexPathsForVisibleRows];
+    for (NSIndexPath *indexPath in visiblePaths)
+    {
+        TencentMessage * currMessage = [tcMessagesList objectAtIndex:indexPath.row];
+        NSMutableString *headURL = [[NSMutableString alloc]initWithString:currMessage.headUrl];
+        if (![headURL isEqualToString:@""]) {
+            [headURL appendString:@"/100"];
+            AvatarLoader *loader = [[[AvatarLoader alloc]initWithIndexPath:indexPath AndURLString:headURL AndReceiver:self]autorelease];
+            [loader loadImg];
+        }
+        [headURL release]; 
+        NSMutableString *picURL = [[NSMutableString alloc]initWithString:currMessage.headUrl];
+        if (![headURL isEqualToString:@""]) {
+            [headURL appendString:@"/100"];
+            AvatarLoader *loader = [[[AvatarLoader alloc]initWithIndexPath:indexPath AndURLString:picURL AndReceiver:self]autorelease];
+            [loader loadImg];
+        }
+        [picURL release];
+    }
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if (!decelerate)
+	{
+        [self downloadImgs];
+    }
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    [self downloadImgs];
 }
 
 
