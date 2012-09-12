@@ -51,9 +51,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A43436C71600B0E5005F16D8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		ECC0AA3015F04CA600256154 = {
 			isa = PBXGroup;
 			children = (
+				A43436C71600B0E5005F16D8 /* Resources */,
 				ECC0AA4515F04CA600256154 /* OrientationExample */,
 				ECC0AA3E15F04CA600256154 /* Frameworks */,
 				ECC0AA3C15F04CA600256154 /* Products */,
@@ -287,6 +295,7 @@
 				ECC0AA5B15F04CA600256154 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

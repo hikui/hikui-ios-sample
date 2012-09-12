@@ -26,27 +26,39 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    UILabel *label = (UILabel *)[self.view viewWithTag:1];
+//    UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
+//    if (UIDeviceOrientationIsLandscape(orientation)) {
+//        label.text = @"landscape";
+//    }else{
+//        label.text = @"portrait";
+//    }
+    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+    if (UIInterfaceOrientationIsLandscape(orientation)) {
+        label.text = @"landscape";
+    }else{
+        label.text = @"portrait";
+    }
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    NSLog(@"vc2------------------");
-    NSLog(@"shouldAutorotate, toInterfaceOrientation:%d",interfaceOrientation);
     return YES;
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
-    NSLog(@"vc2------------------");
-    NSLog(@"willAnimate, toInterfaceOrientation:%d",toInterfaceOrientation);
+    UILabel *label = (UILabel *)[self.view viewWithTag:1];
+    if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation)) {
+        label.text = @"landscape";
+    }else{
+        label.text = @"portrait";
+    }
 }
 
 @end

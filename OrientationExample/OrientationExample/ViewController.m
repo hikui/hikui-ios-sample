@@ -28,16 +28,12 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    NSLog(@"vc1------------------");
-    NSLog(@"shouldAutorotate, toInterfaceOrientation:%d",interfaceOrientation);
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
     [super willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
-    NSLog(@"vc1------------------");
-    NSLog(@"willAnimate, toInterfaceOrientation:%d",toInterfaceOrientation);
 }
 
 @end

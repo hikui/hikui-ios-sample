@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A44B658F15020C5D005D6588 /* TestViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A44B658D15020C5D005D6588 /* TestViewViewController.m */; };
+		A44B659015020C5D005D6588 /* TestViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A44B658E15020C5D005D6588 /* TestViewViewController.xib */; };
 		A45A58A514E9158F003A215C /* AvatarLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = A45A58A414E9158F003A215C /* AvatarLoader.m */; };
 		A45E874D14EB3C5700899223 /* PullRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A45E874C14EB3C5700899223 /* PullRefreshTableViewController.m */; };
 		A45E874F14EB3C6200899223 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = A45E874E14EB3C6200899223 /* arrow.png */; };
@@ -33,6 +35,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A44B658C15020C5D005D6588 /* TestViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewViewController.h; sourceTree = "<group>"; };
+		A44B658D15020C5D005D6588 /* TestViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewViewController.m; sourceTree = "<group>"; };
+		A44B658E15020C5D005D6588 /* TestViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestViewViewController.xib; sourceTree = "<group>"; };
 		A45A58A314E9158F003A215C /* AvatarLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvatarLoader.h; sourceTree = "<group>"; };
 		A45A58A414E9158F003A215C /* AvatarLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvatarLoader.m; sourceTree = "<group>"; };
 		A45E874B14EB3C5700899223 /* PullRefreshTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PullRefreshTableViewController.h; path = ../PullRefreshTableViewController.h; sourceTree = "<group>"; };
@@ -135,6 +140,9 @@
 		A496B75914E78E76009E8D14 = {
 			isa = PBXGroup;
 			children = (
+				A44B658C15020C5D005D6588 /* TestViewViewController.h */,
+				A44B658D15020C5D005D6588 /* TestViewViewController.m */,
+				A44B658E15020C5D005D6588 /* TestViewViewController.xib */,
 				A45E875114EB3C9E00899223 /* QuartzCore.framework */,
 				A496B76E14E78E76009E8D14 /* simple_weibo_test */,
 				A496B76714E78E76009E8D14 /* Frameworks */,
@@ -301,6 +309,7 @@
 				A45E876F14EB4C8300899223 /* anonymous.png in Resources */,
 				A4EEB65F14EEA9D800476A39 /* StatusCell.xib in Resources */,
 				A4EEB69614EFAB7100476A39 /* defaultImg.png in Resources */,
+				A44B659015020C5D005D6588 /* TestViewViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +332,7 @@
 				A4EEB65B14EEA34600476A39 /* TencentTimeline.m in Sources */,
 				A4EEB66214EF4D2000476A39 /* StatusCell.m in Sources */,
 				A4EEB69914EFC32800476A39 /* PictureDownloader.m in Sources */,
+				A44B658F15020C5D005D6588 /* TestViewViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

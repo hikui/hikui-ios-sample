@@ -133,7 +133,11 @@
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-    if (isLoading) return;
+    NSLog(@"scrollViewDidEndDragging");
+    if (isLoading) {
+        NSLog(@"scrollViewDidEndDragging isLoading is true");
+        return;
+    };
     isDragging = NO;
     if (scrollView.contentOffset.y <= -REFRESH_HEADER_HEIGHT) {
         // Released above the header
@@ -143,7 +147,7 @@
 
 - (void)startLoading {
     isLoading = YES;
-
+    NSLog(@"startLoading");
     // Show the header
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.3];
@@ -167,6 +171,9 @@
     [UIView setAnimationDuration:0.3];
     [UIView setAnimationDidStopSelector:@selector(stopLoadingComplete:finished:context:)];
     self.tableView.contentInset = UIEdgeInsetsZero;
+    UIEdgeInsets tableContentInset = self.tableView.contentInset;
+    tableContentInset.top = 0.0;
+    self.tableView.contentInset = tableContentInset;
     [refreshArrow layer].transform = CATransform3DMakeRotation(M_PI * 2, 0, 0, 1);
     [UIView commitAnimations];
 }

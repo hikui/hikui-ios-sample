@@ -48,13 +48,13 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse*)response 
 {
-    NSLog(@"get the whole response");
+    //NSLog(@"get the whole response");
     [receivedData setLength:0];
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
-    NSLog(@"get some data");
+    //NSLog(@"get some data");
     [receivedData appendData:data];
 }
 
