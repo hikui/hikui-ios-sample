@@ -7,7 +7,7 @@
 //
 
 #import "DecoratorImgView.h"
-#define DragPointWidth 10
+#define DragPointWidth 15
 
 @interface DecoratorImgView()
 
@@ -130,6 +130,7 @@ static CGPoint tmpTouchPoint;
     CGPoint touchPoint = [aTouch locationInView:self];
     if (CGRectContainsPoint(dragPointTLRect, touchPoint) ||
         CGRectContainsPoint(dragPointTMRect, touchPoint) ||
+        CGRectContainsPoint(dragPointTRRect, touchPoint) ||
         CGRectContainsPoint(dragPointRMRect, touchPoint) ||
         CGRectContainsPoint(dragPointBRRect, touchPoint) ||
         CGRectContainsPoint(dragPointBMRect, touchPoint) ||
@@ -148,9 +149,10 @@ static CGPoint tmpTouchPoint;
     
     UITouch *aTouch = [touches anyObject];
     CGPoint touchPoint = [aTouch locationInView:self];
+    CGFloat deltaX = touchPoint.x - tmpTouchPoint.x;
+    CGFloat deltaY = touchPoint.y - tmpTouchPoint.y;
     if (shouldMove) {
-        CGFloat deltaX = touchPoint.x - tmpTouchPoint.x;
-        CGFloat deltaY = touchPoint.y - tmpTouchPoint.y;
+        
         CGPoint center = self.center;
         center.x += deltaX;
         center.y += deltaY;
@@ -172,17 +174,46 @@ static CGPoint tmpTouchPoint;
     dragPointLMRect.origin = CGPointMake(0, frameSize.height/2-DragPointWidth/2);
     
     if (CGRectContainsPoint(dragPointTLRect, touchPoint)) {
-        
+        CGRect frame = self.frame;
+        frame.size.height -= deltaY;
+        frame.size.width -= deltaX;
+        frame.origin.y += deltaY;
+        frame.origin.x += deltaX;
+        self.frame = frame;
+        [self setNeedsDisplay];
     }else if (CGRectContainsPoint(dragPointTMRect, touchPoint)){
-        
+        CGRect frame = self.frame;
+        frame.size.height -= deltaY;
+        frame.origin.y += deltaY;
+        self.frame = frame;
+        [self setNeedsDisplay];
     }else if (CGRectContainsPoint(dragPointTRRect, touchPoint)){
-        
+        CGRect frame = self.frame;
+        frame.size.height -= deltaY;
+        frame.origin.y += deltaY;
+        frame.size.width += deltaX;
+        self.frame = frame;
+        tmpTouchPoint = touchPoint;
+        [self setNeedsDisplay];
     }else if (CGRectContainsPoint(dragPointRMRect, touchPoint)){
-        
+        CGRect frame = self.frame;
+        frame.size.width += deltaX;
+        self.frame = frame;
+        tmpTouchPoint = touchPoint;
+        [self setNeedsDisplay];
     }else if (CGRectContainsPoint(dragPointBRRect, touchPoint)){
-        
+        CGRect frame = self.frame;
+        frame.size.height += deltaY;
+        frame.size.width += deltaX;
+        self.frame = frame;
+        tmpTouchPoint = touchPoint;
+        [self setNeedsDisplay];
     }else if (CGRectContainsPoint(dragPointBMRect, touchPoint)){
-        
+        CGRect frame = self.frame;
+        frame.size.height += deltaY;
+        self.frame = frame;
+        tmpTouchPoint = touchPoint;
+        [self setNeedsDisplay];
     }else if (CGRectContainsPoint(dragPointBLRect, touchPoint)){
         
     }else if (CGRectContainsPoint(dragPointLMRect, touchPoint)){
