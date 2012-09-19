@@ -104,12 +104,13 @@
 static BOOL movedBeforeEnd = NO;
 static BOOL shouldMove = NO;
 static CGPoint tmpTouchPoint;
+static CGPoint tmpTouchPoint2;
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [super touchesBegan:touches withEvent:event];
     movedBeforeEnd = NO;
-    tmpTouchPoint = [[touches anyObject]locationInView:self];
+    tmpTouchPoint = tmpTouchPoint2 = [[touches anyObject]locationInView:self];
     
     shouldMove = YES;
     
@@ -151,6 +152,8 @@ static CGPoint tmpTouchPoint;
     CGPoint touchPoint = [aTouch locationInView:self];
     CGFloat deltaX = touchPoint.x - tmpTouchPoint.x;
     CGFloat deltaY = touchPoint.y - tmpTouchPoint.y;
+    CGFloat deltaX2 = touchPoint.x - tmpTouchPoint2.x;
+    CGFloat deltaY2 = touchPoint.y - tmpTouchPoint2.y;
     if (shouldMove) {
         
         CGPoint center = self.center;
@@ -189,8 +192,8 @@ static CGPoint tmpTouchPoint;
         [self setNeedsDisplay];
     }else if (CGRectContainsPoint(dragPointTRRect, touchPoint)){
         CGRect frame = self.frame;
-        frame.size.height -= deltaY;
-        frame.origin.y += deltaY;
+        frame.size.height -= deltaY2;
+        frame.origin.y += deltaY2;
         frame.size.width += deltaX;
         self.frame = frame;
         tmpTouchPoint = touchPoint;
@@ -215,9 +218,19 @@ static CGPoint tmpTouchPoint;
         tmpTouchPoint = touchPoint;
         [self setNeedsDisplay];
     }else if (CGRectContainsPoint(dragPointBLRect, touchPoint)){
-        
+        CGRect frame = self.frame;
+        frame.size.height += deltaY;
+        frame.size.width -= deltaX2;
+        frame.origin.x += deltaX2;
+        self.frame = frame;
+        tmpTouchPoint = touchPoint;
+        [self setNeedsDisplay];
     }else if (CGRectContainsPoint(dragPointLMRect, touchPoint)){
-        
+        CGRect frame = self.frame;
+        frame.size.width -= deltaX2;
+        frame.origin.x += deltaX2;
+        self.frame = frame;
+        [self setNeedsDisplay];
     }
 
 }
