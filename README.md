@@ -4,4 +4,4 @@
 * OrientationExample - [iOS Orientation一些事（不包括iOS6）](http://hikui.is-programmer.com/posts/35554.html)   
 
 # 依赖关系
-* Xcode 4.4及以上 
+* Xcode 4.4及以上
