@@ -1,0 +1,287 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ECE4884A160AC2800022996A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECE48849160AC2800022996A /* UIKit.framework */; };
+		ECE4884C160AC2800022996A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECE4884B160AC2800022996A /* Foundation.framework */; };
+		ECE4884E160AC2800022996A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECE4884D160AC2800022996A /* CoreGraphics.framework */; };
+		ECE48854160AC2800022996A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ECE48852160AC2800022996A /* InfoPlist.strings */; };
+		ECE48856160AC2800022996A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE48855160AC2800022996A /* main.m */; };
+		ECE4885A160AC2800022996A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE48859160AC2800022996A /* AppDelegate.m */; };
+		ECE4885D160AC2800022996A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE4885C160AC2800022996A /* ViewController.m */; };
+		ECE48860160AC2800022996A /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECE4885E160AC2800022996A /* ViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		ECE48845160AC2800022996A /* GestureRecognizerTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GestureRecognizerTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECE48849160AC2800022996A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		ECE4884B160AC2800022996A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		ECE4884D160AC2800022996A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		ECE48851160AC2800022996A /* GestureRecognizerTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GestureRecognizerTest-Info.plist"; sourceTree = "<group>"; };
+		ECE48853160AC2800022996A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		ECE48855160AC2800022996A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		ECE48857160AC2800022996A /* GestureRecognizerTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GestureRecognizerTest-Prefix.pch"; sourceTree = "<group>"; };
+		ECE48858160AC2800022996A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.objj.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		ECE48859160AC2800022996A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		ECE4885B160AC2800022996A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.objj.h; path = ViewController.h; sourceTree = "<group>"; };
+		ECE4885C160AC2800022996A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		ECE4885F160AC2800022996A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ECE48842160AC2800022996A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECE4884A160AC2800022996A /* UIKit.framework in Frameworks */,
+				ECE4884C160AC2800022996A /* Foundation.framework in Frameworks */,
+				ECE4884E160AC2800022996A /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ECE4883A160AC2800022996A = {
+			isa = PBXGroup;
+			children = (
+				ECE4884F160AC2800022996A /* GestureRecognizerTest */,
+				ECE48848160AC2800022996A /* Frameworks */,
+				ECE48846160AC2800022996A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ECE48846160AC2800022996A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ECE48845160AC2800022996A /* GestureRecognizerTest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ECE48848160AC2800022996A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ECE48849160AC2800022996A /* UIKit.framework */,
+				ECE4884B160AC2800022996A /* Foundation.framework */,
+				ECE4884D160AC2800022996A /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ECE4884F160AC2800022996A /* GestureRecognizerTest */ = {
+			isa = PBXGroup;
+			children = (
+				ECE48858160AC2800022996A /* AppDelegate.h */,
+				ECE48859160AC2800022996A /* AppDelegate.m */,
+				ECE4885B160AC2800022996A /* ViewController.h */,
+				ECE4885C160AC2800022996A /* ViewController.m */,
+				ECE4885E160AC2800022996A /* ViewController.xib */,
+				ECE48850160AC2800022996A /* Supporting Files */,
+			);
+			path = GestureRecognizerTest;
+			sourceTree = "<group>";
+		};
+		ECE48850160AC2800022996A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ECE48851160AC2800022996A /* GestureRecognizerTest-Info.plist */,
+				ECE48852160AC2800022996A /* InfoPlist.strings */,
+				ECE48855160AC2800022996A /* main.m */,
+				ECE48857160AC2800022996A /* GestureRecognizerTest-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ECE48844160AC2800022996A /* GestureRecognizerTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECE48863160AC2800022996A /* Build configuration list for PBXNativeTarget "GestureRecognizerTest" */;
+			buildPhases = (
+				ECE48841160AC2800022996A /* Sources */,
+				ECE48842160AC2800022996A /* Frameworks */,
+				ECE48843160AC2800022996A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GestureRecognizerTest;
+			productName = GestureRecognizerTest;
+			productReference = ECE48845160AC2800022996A /* GestureRecognizerTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ECE4883C160AC2800022996A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "缪 和光";
+			};
+			buildConfigurationList = ECE4883F160AC2800022996A /* Build configuration list for PBXProject "GestureRecognizerTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = ECE4883A160AC2800022996A;
+			productRefGroup = ECE48846160AC2800022996A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ECE48844160AC2800022996A /* GestureRecognizerTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ECE48843160AC2800022996A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECE48854160AC2800022996A /* InfoPlist.strings in Resources */,
+				ECE48860160AC2800022996A /* ViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ECE48841160AC2800022996A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECE48856160AC2800022996A /* main.m in Sources */,
+				ECE4885A160AC2800022996A /* AppDelegate.m in Sources */,
+				ECE4885D160AC2800022996A /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		ECE48852160AC2800022996A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ECE48853160AC2800022996A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		ECE4885E160AC2800022996A /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ECE4885F160AC2800022996A /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ECE48861160AC2800022996A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		ECE48862160AC2800022996A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ECE48864160AC2800022996A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GestureRecognizerTest/GestureRecognizerTest-Prefix.pch";
+				INFOPLIST_FILE = "GestureRecognizerTest/GestureRecognizerTest-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		ECE48865160AC2800022996A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GestureRecognizerTest/GestureRecognizerTest-Prefix.pch";
+				INFOPLIST_FILE = "GestureRecognizerTest/GestureRecognizerTest-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ECE4883F160AC2800022996A /* Build configuration list for PBXProject "GestureRecognizerTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECE48861160AC2800022996A /* Debug */,
+				ECE48862160AC2800022996A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECE48863160AC2800022996A /* Build configuration list for PBXNativeTarget "GestureRecognizerTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECE48864160AC2800022996A /* Debug */,
+				ECE48865160AC2800022996A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ECE4883C160AC2800022996A /* Project object */;
+}
