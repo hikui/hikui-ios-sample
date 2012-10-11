@@ -1,0 +1,245 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EC1A81F91626697000827B24 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1A81F81626697000827B24 /* Foundation.framework */; };
+		EC1A81FC1626697000827B24 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1A81FB1626697000827B24 /* main.m */; };
+		EC1A82001626697000827B24 /* ObjcDictKeyTest.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = EC1A81FF1626697000827B24 /* ObjcDictKeyTest.1 */; };
+		EC1A82081626698B00827B24 /* CustomClass.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1A82071626698B00827B24 /* CustomClass.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EC1A81F21626697000827B24 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				EC1A82001626697000827B24 /* ObjcDictKeyTest.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		EC1A81F41626697000827B24 /* ObjcDictKeyTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ObjcDictKeyTest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC1A81F81626697000827B24 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EC1A81FB1626697000827B24 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EC1A81FE1626697000827B24 /* ObjcDictKeyTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjcDictKeyTest-Prefix.pch"; sourceTree = "<group>"; };
+		EC1A81FF1626697000827B24 /* ObjcDictKeyTest.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = ObjcDictKeyTest.1; sourceTree = "<group>"; };
+		EC1A82061626698B00827B24 /* CustomClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomClass.h; sourceTree = "<group>"; };
+		EC1A82071626698B00827B24 /* CustomClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomClass.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC1A81F11626697000827B24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC1A81F91626697000827B24 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EC1A81E91626697000827B24 = {
+			isa = PBXGroup;
+			children = (
+				EC1A81FA1626697000827B24 /* ObjcDictKeyTest */,
+				EC1A81F71626697000827B24 /* Frameworks */,
+				EC1A81F51626697000827B24 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EC1A81F51626697000827B24 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC1A81F41626697000827B24 /* ObjcDictKeyTest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC1A81F71626697000827B24 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC1A81F81626697000827B24 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EC1A81FA1626697000827B24 /* ObjcDictKeyTest */ = {
+			isa = PBXGroup;
+			children = (
+				EC1A81FB1626697000827B24 /* main.m */,
+				EC1A81FF1626697000827B24 /* ObjcDictKeyTest.1 */,
+				EC1A81FD1626697000827B24 /* Supporting Files */,
+				EC1A82061626698B00827B24 /* CustomClass.h */,
+				EC1A82071626698B00827B24 /* CustomClass.m */,
+			);
+			path = ObjcDictKeyTest;
+			sourceTree = "<group>";
+		};
+		EC1A81FD1626697000827B24 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC1A81FE1626697000827B24 /* ObjcDictKeyTest-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EC1A81F31626697000827B24 /* ObjcDictKeyTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC1A82031626697000827B24 /* Build configuration list for PBXNativeTarget "ObjcDictKeyTest" */;
+			buildPhases = (
+				EC1A81F01626697000827B24 /* Sources */,
+				EC1A81F11626697000827B24 /* Frameworks */,
+				EC1A81F21626697000827B24 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ObjcDictKeyTest;
+			productName = ObjcDictKeyTest;
+			productReference = EC1A81F41626697000827B24 /* ObjcDictKeyTest */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC1A81EB1626697000827B24 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "缪 和光";
+			};
+			buildConfigurationList = EC1A81EE1626697000827B24 /* Build configuration list for PBXProject "ObjcDictKeyTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EC1A81E91626697000827B24;
+			productRefGroup = EC1A81F51626697000827B24 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC1A81F31626697000827B24 /* ObjcDictKeyTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC1A81F01626697000827B24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC1A81FC1626697000827B24 /* main.m in Sources */,
+				EC1A82081626698B00827B24 /* CustomClass.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		EC1A82011626697000827B24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		EC1A82021626697000827B24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		EC1A82041626697000827B24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ObjcDictKeyTest/ObjcDictKeyTest-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EC1A82051626697000827B24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ObjcDictKeyTest/ObjcDictKeyTest-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC1A81EE1626697000827B24 /* Build configuration list for PBXProject "ObjcDictKeyTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC1A82011626697000827B24 /* Debug */,
+				EC1A82021626697000827B24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC1A82031626697000827B24 /* Build configuration list for PBXNativeTarget "ObjcDictKeyTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC1A82041626697000827B24 /* Debug */,
+				EC1A82051626697000827B24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EC1A81EB1626697000827B24 /* Project object */;
+}
