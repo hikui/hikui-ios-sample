@@ -1,0 +1,290 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EC1A82C716280ADD00827B24 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1A82C616280ADD00827B24 /* UIKit.framework */; };
+		EC1A82C916280ADD00827B24 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1A82C816280ADD00827B24 /* Foundation.framework */; };
+		EC1A82CB16280ADD00827B24 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1A82CA16280ADD00827B24 /* CoreGraphics.framework */; };
+		EC1A82D116280ADE00827B24 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC1A82CF16280ADE00827B24 /* InfoPlist.strings */; };
+		EC1A82D316280ADE00827B24 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1A82D216280ADE00827B24 /* main.m */; };
+		EC1A82D716280ADE00827B24 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1A82D616280ADE00827B24 /* AppDelegate.m */; };
+		EC1A82DA16280ADE00827B24 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1A82D916280ADE00827B24 /* ViewController.m */; };
+		EC1A82DD16280ADE00827B24 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC1A82DB16280ADE00827B24 /* ViewController.xib */; };
+		EC1A82E4162811B700827B24 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1A82E3162811B700827B24 /* QuartzCore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EC1A82C216280ADD00827B24 /* UIViewTransformTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIViewTransformTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC1A82C616280ADD00827B24 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		EC1A82C816280ADD00827B24 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EC1A82CA16280ADD00827B24 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EC1A82CE16280ADE00827B24 /* UIViewTransformTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UIViewTransformTest-Info.plist"; sourceTree = "<group>"; };
+		EC1A82D016280ADE00827B24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EC1A82D216280ADE00827B24 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EC1A82D416280ADE00827B24 /* UIViewTransformTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewTransformTest-Prefix.pch"; sourceTree = "<group>"; };
+		EC1A82D516280ADE00827B24 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EC1A82D616280ADE00827B24 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EC1A82D816280ADE00827B24 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		EC1A82D916280ADE00827B24 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EC1A82DC16280ADE00827B24 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		EC1A82E3162811B700827B24 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC1A82BF16280ADD00827B24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC1A82E4162811B700827B24 /* QuartzCore.framework in Frameworks */,
+				EC1A82C716280ADD00827B24 /* UIKit.framework in Frameworks */,
+				EC1A82C916280ADD00827B24 /* Foundation.framework in Frameworks */,
+				EC1A82CB16280ADD00827B24 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EC1A82B716280ADD00827B24 = {
+			isa = PBXGroup;
+			children = (
+				EC1A82E3162811B700827B24 /* QuartzCore.framework */,
+				EC1A82CC16280ADE00827B24 /* UIViewTransformTest */,
+				EC1A82C516280ADD00827B24 /* Frameworks */,
+				EC1A82C316280ADD00827B24 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EC1A82C316280ADD00827B24 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC1A82C216280ADD00827B24 /* UIViewTransformTest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC1A82C516280ADD00827B24 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC1A82C616280ADD00827B24 /* UIKit.framework */,
+				EC1A82C816280ADD00827B24 /* Foundation.framework */,
+				EC1A82CA16280ADD00827B24 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EC1A82CC16280ADE00827B24 /* UIViewTransformTest */ = {
+			isa = PBXGroup;
+			children = (
+				EC1A82D516280ADE00827B24 /* AppDelegate.h */,
+				EC1A82D616280ADE00827B24 /* AppDelegate.m */,
+				EC1A82D816280ADE00827B24 /* ViewController.h */,
+				EC1A82D916280ADE00827B24 /* ViewController.m */,
+				EC1A82DB16280ADE00827B24 /* ViewController.xib */,
+				EC1A82CD16280ADE00827B24 /* Supporting Files */,
+			);
+			path = UIViewTransformTest;
+			sourceTree = "<group>";
+		};
+		EC1A82CD16280ADE00827B24 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC1A82CE16280ADE00827B24 /* UIViewTransformTest-Info.plist */,
+				EC1A82CF16280ADE00827B24 /* InfoPlist.strings */,
+				EC1A82D216280ADE00827B24 /* main.m */,
+				EC1A82D416280ADE00827B24 /* UIViewTransformTest-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EC1A82C116280ADD00827B24 /* UIViewTransformTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC1A82E016280ADE00827B24 /* Build configuration list for PBXNativeTarget "UIViewTransformTest" */;
+			buildPhases = (
+				EC1A82BE16280ADD00827B24 /* Sources */,
+				EC1A82BF16280ADD00827B24 /* Frameworks */,
+				EC1A82C016280ADD00827B24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UIViewTransformTest;
+			productName = UIViewTransformTest;
+			productReference = EC1A82C216280ADD00827B24 /* UIViewTransformTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC1A82B916280ADD00827B24 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "缪 和光";
+			};
+			buildConfigurationList = EC1A82BC16280ADD00827B24 /* Build configuration list for PBXProject "UIViewTransformTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EC1A82B716280ADD00827B24;
+			productRefGroup = EC1A82C316280ADD00827B24 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC1A82C116280ADD00827B24 /* UIViewTransformTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EC1A82C016280ADD00827B24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC1A82D116280ADE00827B24 /* InfoPlist.strings in Resources */,
+				EC1A82DD16280ADE00827B24 /* ViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC1A82BE16280ADD00827B24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC1A82D316280ADE00827B24 /* main.m in Sources */,
+				EC1A82D716280ADE00827B24 /* AppDelegate.m in Sources */,
+				EC1A82DA16280ADE00827B24 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EC1A82CF16280ADE00827B24 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC1A82D016280ADE00827B24 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EC1A82DB16280ADE00827B24 /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC1A82DC16280ADE00827B24 /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EC1A82DE16280ADE00827B24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EC1A82DF16280ADE00827B24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EC1A82E116280ADE00827B24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UIViewTransformTest/UIViewTransformTest-Prefix.pch";
+				INFOPLIST_FILE = "UIViewTransformTest/UIViewTransformTest-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		EC1A82E216280ADE00827B24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UIViewTransformTest/UIViewTransformTest-Prefix.pch";
+				INFOPLIST_FILE = "UIViewTransformTest/UIViewTransformTest-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC1A82BC16280ADD00827B24 /* Build configuration list for PBXProject "UIViewTransformTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC1A82DE16280ADE00827B24 /* Debug */,
+				EC1A82DF16280ADE00827B24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC1A82E016280ADE00827B24 /* Build configuration list for PBXNativeTarget "UIViewTransformTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC1A82E116280ADE00827B24 /* Debug */,
+				EC1A82E216280ADE00827B24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EC1A82B916280ADD00827B24 /* Project object */;
+}
