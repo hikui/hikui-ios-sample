@@ -31,7 +31,7 @@
     self.view.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
     UIImageView *imgView = [[UIImageView alloc]initWithFrame:self.originalRect];
     imgView.contentMode = UIViewContentModeScaleAspectFit;
-    imgView.image = [UIImage imageNamed:@"flag_big.jpg"];
+    imgView.image = [UIImage imageNamed:@"flag.jpg"];
     imgView.userInteractionEnabled = YES;
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapImage:)];
     [imgView addGestureRecognizer:tapGesture];

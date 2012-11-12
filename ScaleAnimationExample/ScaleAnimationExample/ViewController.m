@@ -51,7 +51,7 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
-    cell.imageView.image = [UIImage imageNamed:@"flag.jpg"];
+    cell.imageView.image = [UIImage imageNamed:@"flag_thumbnail.jpg"];
     return cell;
 }
 
