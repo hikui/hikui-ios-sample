@@ -1,0 +1,302 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EC3EE9B51650B25900E3A670 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC3EE9B41650B25800E3A670 /* UIKit.framework */; };
+		EC3EE9B71650B25900E3A670 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC3EE9B61650B25900E3A670 /* Foundation.framework */; };
+		EC3EE9B91650B25900E3A670 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC3EE9B81650B25900E3A670 /* CoreGraphics.framework */; };
+		EC3EE9BF1650B25900E3A670 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC3EE9BD1650B25900E3A670 /* InfoPlist.strings */; };
+		EC3EE9C11650B25900E3A670 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3EE9C01650B25900E3A670 /* main.m */; };
+		EC3EE9C51650B25900E3A670 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3EE9C41650B25900E3A670 /* AppDelegate.m */; };
+		EC3EE9C81650B25900E3A670 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3EE9C71650B25900E3A670 /* ViewController.m */; };
+		EC3EE9CB1650B25900E3A670 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC3EE9C91650B25900E3A670 /* ViewController.xib */; };
+		EC3EE9D21650B46300E3A670 /* flag.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC3EE9D11650B46300E3A670 /* flag.jpg */; };
+		EC3EE9D51650B69000E3A670 /* DetailViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = EC3EE9D31650B69000E3A670 /* DetailViewController.h */; };
+		EC3EE9D61650B69000E3A670 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3EE9D41650B69000E3A670 /* DetailViewController.m */; };
+		EC3EE9D81650B9BE00E3A670 /* flag_big.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC3EE9D71650B9BE00E3A670 /* flag_big.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EC3EE9B01650B25800E3A670 /* ScaleAnimationExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScaleAnimationExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC3EE9B41650B25800E3A670 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		EC3EE9B61650B25900E3A670 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EC3EE9B81650B25900E3A670 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EC3EE9BC1650B25900E3A670 /* ScaleAnimationExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ScaleAnimationExample-Info.plist"; sourceTree = "<group>"; };
+		EC3EE9BE1650B25900E3A670 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EC3EE9C01650B25900E3A670 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EC3EE9C21650B25900E3A670 /* ScaleAnimationExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScaleAnimationExample-Prefix.pch"; sourceTree = "<group>"; };
+		EC3EE9C31650B25900E3A670 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.objj.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EC3EE9C41650B25900E3A670 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EC3EE9C61650B25900E3A670 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.objj.h; path = ViewController.h; sourceTree = "<group>"; };
+		EC3EE9C71650B25900E3A670 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EC3EE9CA1650B25900E3A670 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		EC3EE9D11650B46300E3A670 /* flag.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flag.jpg; sourceTree = "<group>"; };
+		EC3EE9D31650B69000E3A670 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		EC3EE9D41650B69000E3A670 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		EC3EE9D71650B9BE00E3A670 /* flag_big.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flag_big.jpg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC3EE9AD1650B25800E3A670 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC3EE9B51650B25900E3A670 /* UIKit.framework in Frameworks */,
+				EC3EE9B71650B25900E3A670 /* Foundation.framework in Frameworks */,
+				EC3EE9B91650B25900E3A670 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EC3EE9A51650B25800E3A670 = {
+			isa = PBXGroup;
+			children = (
+				EC3EE9BA1650B25900E3A670 /* ScaleAnimationExample */,
+				EC3EE9B31650B25800E3A670 /* Frameworks */,
+				EC3EE9B11650B25800E3A670 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EC3EE9B11650B25800E3A670 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC3EE9B01650B25800E3A670 /* ScaleAnimationExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC3EE9B31650B25800E3A670 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC3EE9B41650B25800E3A670 /* UIKit.framework */,
+				EC3EE9B61650B25900E3A670 /* Foundation.framework */,
+				EC3EE9B81650B25900E3A670 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EC3EE9BA1650B25900E3A670 /* ScaleAnimationExample */ = {
+			isa = PBXGroup;
+			children = (
+				EC3EE9D71650B9BE00E3A670 /* flag_big.jpg */,
+				EC3EE9D11650B46300E3A670 /* flag.jpg */,
+				EC3EE9C31650B25900E3A670 /* AppDelegate.h */,
+				EC3EE9C41650B25900E3A670 /* AppDelegate.m */,
+				EC3EE9C61650B25900E3A670 /* ViewController.h */,
+				EC3EE9C71650B25900E3A670 /* ViewController.m */,
+				EC3EE9C91650B25900E3A670 /* ViewController.xib */,
+				EC3EE9BB1650B25900E3A670 /* Supporting Files */,
+				EC3EE9D31650B69000E3A670 /* DetailViewController.h */,
+				EC3EE9D41650B69000E3A670 /* DetailViewController.m */,
+			);
+			path = ScaleAnimationExample;
+			sourceTree = "<group>";
+		};
+		EC3EE9BB1650B25900E3A670 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC3EE9BC1650B25900E3A670 /* ScaleAnimationExample-Info.plist */,
+				EC3EE9BD1650B25900E3A670 /* InfoPlist.strings */,
+				EC3EE9C01650B25900E3A670 /* main.m */,
+				EC3EE9C21650B25900E3A670 /* ScaleAnimationExample-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EC3EE9AF1650B25800E3A670 /* ScaleAnimationExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC3EE9CE1650B25900E3A670 /* Build configuration list for PBXNativeTarget "ScaleAnimationExample" */;
+			buildPhases = (
+				EC3EE9AC1650B25800E3A670 /* Sources */,
+				EC3EE9AD1650B25800E3A670 /* Frameworks */,
+				EC3EE9AE1650B25800E3A670 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScaleAnimationExample;
+			productName = ScaleAnimationExample;
+			productReference = EC3EE9B01650B25800E3A670 /* ScaleAnimationExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC3EE9A71650B25800E3A670 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "缪 和光";
+			};
+			buildConfigurationList = EC3EE9AA1650B25800E3A670 /* Build configuration list for PBXProject "ScaleAnimationExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EC3EE9A51650B25800E3A670;
+			productRefGroup = EC3EE9B11650B25800E3A670 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC3EE9AF1650B25800E3A670 /* ScaleAnimationExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EC3EE9AE1650B25800E3A670 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC3EE9BF1650B25900E3A670 /* InfoPlist.strings in Resources */,
+				EC3EE9CB1650B25900E3A670 /* ViewController.xib in Resources */,
+				EC3EE9D21650B46300E3A670 /* flag.jpg in Resources */,
+				EC3EE9D81650B9BE00E3A670 /* flag_big.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC3EE9AC1650B25800E3A670 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC3EE9C11650B25900E3A670 /* main.m in Sources */,
+				EC3EE9C51650B25900E3A670 /* AppDelegate.m in Sources */,
+				EC3EE9C81650B25900E3A670 /* ViewController.m in Sources */,
+				EC3EE9D51650B69000E3A670 /* DetailViewController.h in Sources */,
+				EC3EE9D61650B69000E3A670 /* DetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EC3EE9BD1650B25900E3A670 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC3EE9BE1650B25900E3A670 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EC3EE9C91650B25900E3A670 /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC3EE9CA1650B25900E3A670 /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EC3EE9CC1650B25900E3A670 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EC3EE9CD1650B25900E3A670 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EC3EE9CF1650B25900E3A670 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ScaleAnimationExample/ScaleAnimationExample-Prefix.pch";
+				INFOPLIST_FILE = "ScaleAnimationExample/ScaleAnimationExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		EC3EE9D01650B25900E3A670 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ScaleAnimationExample/ScaleAnimationExample-Prefix.pch";
+				INFOPLIST_FILE = "ScaleAnimationExample/ScaleAnimationExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC3EE9AA1650B25800E3A670 /* Build configuration list for PBXProject "ScaleAnimationExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC3EE9CC1650B25900E3A670 /* Debug */,
+				EC3EE9CD1650B25900E3A670 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC3EE9CE1650B25900E3A670 /* Build configuration list for PBXNativeTarget "ScaleAnimationExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC3EE9CF1650B25900E3A670 /* Debug */,
+				EC3EE9D01650B25900E3A670 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EC3EE9A71650B25800E3A670 /* Project object */;
+}
