@@ -47,9 +47,9 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [UIView animateWithDuration:0.4 animations:^{
+    [UIView animateWithDuration:0.4 delay:0.1 options:0 animations:^{
         self.imageView.frame = self.view.bounds;
-    }];
+    } completion:nil];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -63,7 +63,7 @@
     [UIView animateWithDuration:0.4 animations:^{
         self.imageView.frame = self.originalRect;
     }];
-    [self dismissModalViewControllerAnimated:YES];
+    [self performSelector:@selector(dismissModalViewControllerAnimated:) withObject:[NSNumber numberWithBool:YES] afterDelay:0.2];
 }
 
 @end

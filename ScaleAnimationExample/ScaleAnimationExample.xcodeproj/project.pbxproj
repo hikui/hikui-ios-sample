@@ -19,6 +19,7 @@
 		EC3EE9D51650B69000E3A670 /* DetailViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = EC3EE9D31650B69000E3A670 /* DetailViewController.h */; };
 		EC3EE9D61650B69000E3A670 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3EE9D41650B69000E3A670 /* DetailViewController.m */; };
 		EC3EE9D81650B9BE00E3A670 /* flag_big.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC3EE9D71650B9BE00E3A670 /* flag_big.jpg */; };
+		EC3EEA161650C86C00E3A670 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC3EEA151650C86C00E3A670 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		EC3EE9D31650B69000E3A670 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		EC3EE9D41650B69000E3A670 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		EC3EE9D71650B9BE00E3A670 /* flag_big.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flag_big.jpg; sourceTree = "<group>"; };
+		EC3EEA151650C86C00E3A670 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC3EEA161650C86C00E3A670 /* QuartzCore.framework in Frameworks */,
 				EC3EE9B51650B25900E3A670 /* UIKit.framework in Frameworks */,
 				EC3EE9B71650B25900E3A670 /* Foundation.framework in Frameworks */,
 				EC3EE9B91650B25900E3A670 /* CoreGraphics.framework in Frameworks */,
@@ -75,6 +78,7 @@
 		EC3EE9B31650B25800E3A670 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EC3EEA151650C86C00E3A670 /* QuartzCore.framework */,
 				EC3EE9B41650B25800E3A670 /* UIKit.framework */,
 				EC3EE9B61650B25900E3A670 /* Foundation.framework */,
 				EC3EE9B81650B25900E3A670 /* CoreGraphics.framework */,
@@ -295,6 +299,7 @@
 				EC3EE9D01650B25900E3A670 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

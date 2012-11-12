@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "DetailViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface ViewController ()
 
@@ -62,6 +63,7 @@
     NSLog(@"original frame:%@",[NSValue valueWithCGRect:frame]);
     CGRect rectInParentView = [imgView convertRect:frame toView:self.view];
     NSLog(@"rect in parent view:%@",[NSValue valueWithCGRect:rectInParentView]);
+    
     DetailViewController *detailVC = [[DetailViewController alloc]init];
     detailVC.originalRect = rectInParentView;
     detailVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
